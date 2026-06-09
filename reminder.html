@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>提醒设置</title>
+    <link rel="stylesheet" href="css/mine.css">
+    <style>
+        .page-top {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            font-size: 24px;
+            color: #24573f;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        .page-title-text {
+            flex: 1;
+            text-align: center;
+            font-size: 22px;
+            color: #24573f;
+        }
+        .set-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 10px;
+        }
+        .switch {
+            width: 46px;
+            height: 24px;
+            background: #ccc;
+            border-radius: 24px;
+            position: relative;
+            cursor: pointer;
+            /* 增加过渡动画 */
+            transition: background 0.3s ease;
+        }
+        .switch::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            /* 滑块平移动画 */
+            transition: left 0.3s ease;
+        }
+        .switch.open {
+            background: #bde978;
+        }
+        .switch.open::after {
+            left: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-box">
+        <div class="island"></div>
+
+        <div class="container">
+            <div class="page-top">
+                <span class="back-btn" onclick="history.back()">‹</span>
+                <h2 class="page-title-text">提醒设置</h2>
+                <span></span>
+            </div>
+
+            <div class="set-item">
+                <span>每日打卡提醒</span>
+                <div class="switch open"></div>
+            </div>
+            <div class="set-item">
+                <span>情绪记录提醒</span>
+                <div class="switch"></div>
+            </div>
+            <div class="set-item">
+                <span>消息推送</span>
+                <div class="switch open"></div>
+            </div>
+        </div>
+
+        <nav class="tab-bar">
+            <a href="music.html" class="tab-item">
+                <div class="tab-icon">🎵</div>
+                <div class="tab-text">急救包</div>
+            </a>
+            <a href="comment.html" class="tab-item">
+                <div class="tab-icon">💬</div>
+            </a>
+            <a href="diary.html" class="tab-item">
+                <div class="tab-icon">📖</div>
+                <div class="tab-text">情绪日记</div>
+            </a>
+            <a href="transform.html" class="tab-item">
+                <div class="tab-icon">✨</div>
+                <div class="tab-text">转化坊</div>
+            </a>
+            <a href="mine.html" class="tab-item active">
+                <div class="tab-icon">👤</div>
+                <div class="tab-text">我的</div>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        // 获取所有开关
+        const switches = document.querySelectorAll('.switch');
+        switches.forEach(item => {
+            item.addEventListener('click', function() {
+                // 切换 open 类名，实现开关动态切换
+                this.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

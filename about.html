@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>关于</title>
+    <link rel="stylesheet" href="css/mine.css">
+    <style>
+        .page-top {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            font-size: 24px;
+            color: #24573f;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        .page-title-text {
+            flex: 1;
+            text-align: center;
+            font-size: 22px;
+            color: #24573f;
+        }
+        .about-card {
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .about-text {
+            line-height: 1.8;
+            color: #666;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-box">
+        <div class="island"></div>
+
+        <div class="container">
+            <div class="page-top">
+                <span class="back-btn" onclick="history.back()">‹</span>
+                <h2 class="page-title-text">关于智愈清源</h2>
+                <span></span>
+            </div>
+
+            <div class="about-card">
+                <h3>情绪治愈小助手</h3>
+                <p class="about-text">
+                    一款专注情绪记录、心情疏导的轻应用，
+                    陪伴你记录每一天的喜怒哀乐，
+                    用音乐与文字治愈内心。
+                </p>
+                <p style="margin-top:15px;color:#999;">版本：V2.0.0</p>
+            </div>
+        </div>
+
+        <nav class="tab-bar">
+            <a href="music.html" class="tab-item">
+                <div class="tab-icon">🎵</div>
+                <div class="tab-text">急救包</div>
+            </a>
+            <a href="comment.html" class="tab-item">
+                <div class="tab-icon">💬</div>
+                <div class="tab-text">模拟器</div>
+            </a>
+            <a href="diary.html" class="tab-item">
+                <div class="tab-icon">📖</div>
+                <div class="tab-text">情绪日记</div>
+            </a>
+            <a href="transform.html" class="tab-item">
+                <div class="tab-icon">✨</div>
+                <div class="tab-text">转化坊</div>
+            </a>
+            <a href="mine.html" class="tab-item active">
+                <div class="tab-icon">👤</div>
+                <div class="tab-text">我的</div>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

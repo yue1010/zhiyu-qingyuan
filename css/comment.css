@@ -1,0 +1,381 @@
+/* 评论内容外层容器 */
+.comment-container {
+    flex: 1;
+    padding: 0 5px;
+    overflow-y: auto;
+}
+.comment-container::-webkit-scrollbar {
+    display: none;
+}
+.comment-container {
+    scrollbar-width: none;
+}
+
+/* 顶部横向分类栏 */
+.category-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0 15px;
+    gap: 20px;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 15px;
+}
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+.category-scroll {
+    scrollbar-width: none;
+}
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 55px;
+    color: #333;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.category-item.active {
+    color: #96cc49;
+    font-weight: bold;
+}
+.category-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #bde978;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* 训练场景模块 */
+.scene-section {
+    margin-bottom: 0px; /* 再减少间距，让话题卡片上移到和弹幕等距 */
+}
+.scene-title {
+    font-size: 19px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 6px;
+}
+.scene-subtitle {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* 横向滑动容器 */
+.scene-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    height: 100px;
+}
+.scene-scroll::-webkit-scrollbar {
+    display: none;
+}
+.scene-scroll {
+    scrollbar-width: none;
+}
+
+/* 标签组：默认隐藏，仅显示 active 组 */
+.tag-group {
+    display: none;
+    width: max-content;
+    padding: 0 5px;
+}
+.tag-group-show {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 两行标签，交错排列 */
+.tag-row {
+    display: flex;
+    gap: 12px;
+}
+.tag-row:nth-child(2) {
+    margin-left: 30px;
+}
+
+/* 标签样式 */
+.scene-tag {
+    background: #f3fbeb;
+    border-radius: 99px;
+    padding: 9px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #24573f;
+    white-space: nowrap;
+}
+.tag-icon {
+    width: 16px;
+    height: 16px;
+    background: #bde978;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* ========== 今日话题卡片 ========== */
+.topic-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* 难度切换栏：解决文字被截断问题 */
+.topic-level-tabs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+    /* 强制容器宽度足够，避免被父级截断 */
+    width: 100%;
+    overflow-x: visible;
+}
+.level-tab {
+    /* 增大左右内边距，保证“高压”文字完全显示 */
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: #f1f8e9;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0; /* 防止被压缩 */
+}
+.level-tab.active {
+    background: #bde978;
+    color: #24573f;
+    font-weight: bold;
+}
+
+/* 话题标题 */
+.topic-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* 评论列表 */
+.comment-list {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.comment-item {
+    display: flex;
+    gap: 10px;
+}
+.comment-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e0e5eb;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+.comment-content {
+    background: #f5f9f5;
+    border-radius: 12px;
+    padding: 12px 14px;
+    flex: 1;
+}
+.comment-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+.comment-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* 回复输入框 */
+.reply-input-area {
+    position: relative;
+    margin-bottom: 16px;
+}
+.reply-input {
+    width: 100%;
+    min-height: 85px;
+    border: 1px solid #e0e9e0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #444;
+    resize: none;
+    background: #f9fdf5;
+}
+.reply-input:focus {
+    outline: none;
+    border-color: #96cc49;
+}
+.char-count {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* 快捷表达建议 */
+.quick-reply .quick-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.quick-bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.quick-bubble {
+    background: #e6f7e6;
+    border-radius: 99px;
+    padding: 9px 14px;
+    font-size: 13px;
+    color: #24573f;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.quick-bubble:hover {
+    background: #d9f2d9;
+}
+
+/* ========== 训练反馈弹窗（参考音乐弹窗的动画和居中效果） ========== */
+.feedback-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 深色半透明背景，突出弹窗 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300; /* 层级高于音乐弹窗 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.feedback-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.feedback-modal-content {
+    width: 88%;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(80px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.feedback-modal.active .feedback-modal-content {
+    transform: translateY(0);
+}
+
+/* 标题 */
+.feedback-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #24573f;
+    text-align: center;
+    margin: 0;
+}
+
+/* 评分行 */
+.score-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.score-item {
+    flex: 1;
+    background: #f5f9f5;
+    border-radius: 12px;
+    padding: 12px 8px;
+    text-align: center;
+}
+.score-label {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+}
+.score-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #24573f;
+}
+.score-value.risk-low {
+    color: #22b559;
+}
+.score-value.risk-mid {
+    color: #ff9800;
+}
+.score-value.risk-high {
+    color: #f44336;
+}
+
+/* 反馈文本块 */
+.feedback-block {
+    background: #f5f9f5;
+    border-radius: 12px;
+    padding: 14px;
+}
+.feedback-block.feedback-encourage {
+    background: #e6f7e6;
+}
+.feedback-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+.feedback-encourage .feedback-text {
+    color: #24573f;
+}
+
+/* 关闭按钮 */
+.feedback-close-btn {
+    width: 100%;
+    height: 50px;
+    background-color: #22b559;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}

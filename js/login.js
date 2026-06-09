@@ -1,0 +1,150 @@
+//DOM
+const openPop = document.getElementById('openPop');
+const closePop = document.getElementById('closePop');
+const mask = document.getElementById('mask');
+const popBox = document.getElementById('popBox');
+const tourBtn = document.getElementById('tourBtn');
+const phoneInp = document.getElementById('phoneInp');
+const codeInp = document.getElementById('codeInp');
+const getCodeBtn = document.getElementById('getCodeBtn');
+const submitLogin = document.getElementById('submitLogin');
+const qqLogin = document.getElementById('qqLogin');
+const wxLogin = document.getElementById('wxLogin');
+
+//隐私弹窗DOM
+const privacyMask = document.getElementById('privacyMask');
+const countNum = document.getElementById('countNum');
+const privacyCheck = document.getElementById('privacyCheck');
+const agreeBtn = document.getElementById('agreeBtn');
+
+let countDownTimer = null;
+let count = 5;
+let isAgree = false; //全局标记是否同意隐私
+
+//页面加载自动弹出隐私弹窗
+window.onload = function(){
+    //5秒倒计时
+    countDownTimer = setInterval(()=>{
+        count--;
+        countNum.innerText = count;
+        if(count <= 0){
+            clearInterval(countDownTimer);
+            privacyCheck.disabled = false; //解锁复选框
+        }
+    },1000)
+}
+
+//勾选协议后解锁确认按钮
+privacyCheck.onchange = function(){
+    if(this.checked){
+        agreeBtn.classList.remove('agree-disabled');
+        agreeBtn.classList.add('agree-active');
+        agreeBtn.disabled = false;
+    }else{
+        agreeBtn.classList.add('agree-disabled');
+        agreeBtn.classList.remove('agree-active');
+        agreeBtn.disabled = true;
+    }
+}
+
+//点击确认关闭隐私弹窗，解锁全页面功能
+agreeBtn.onclick = function(){
+    isAgree = true;
+    privacyMask.style.display = 'none';
+}
+
+//一键登录 打开弹窗
+openPop.onclick = function(){
+    if(!isAgree){
+        alert("请先阅读并同意隐私政策");
+        return;
+    }
+    mask.style.display = 'block'; //修复引号错误
+    popBox.classList.add('pop-show');
+}
+
+//关闭登录弹窗
+closePop.onclick = function(){
+    mask.style.display = 'none';
+    popBox.classList.remove('pop-show');
+}
+mask.onclick = function(){
+    mask.style.display = 'none';
+    popBox.classList.remove('pop-show');
+}
+
+//游客按钮
+tourBtn.onclick = function(){
+    if(!isAgree){
+        alert("请先阅读并同意隐私政策");
+        return;
+    }
+    alert("游客模式进入APP，仅开放部分功能，登录解锁全部服务");
+    location.href = "music.html";
+}
+
+//获取验证码
+getCodeBtn.onclick = function(){
+    if(!isAgree){
+        alert("请先阅读并同意隐私政策");
+        return;
+    }
+    const phoneVal = phoneInp.value.trim();
+    if(phoneVal.length !== 11){
+        alert('请输入11位手机号码');
+        return;
+    }
+    let cd = 60;
+    let t = setInterval(()=>{
+        cd--;
+        getCodeBtn.innerText = `${cd}s后重新获取`;
+        getCodeBtn.style.color = '#999';
+        if(cd <= 0){
+            clearInterval(t);
+            getCodeBtn.innerText = '获取验证码';
+            getCodeBtn.style.color = '#7ccd7c';
+        }
+    },1000)
+}
+
+//手机号登录（移除协议勾选判断）
+submitLogin.onclick = function(){
+    if(!isAgree){
+        alert("请先阅读并同意隐私政策");
+        return;
+    }
+    const phoneVal = phoneInp.value.trim();
+    const codeVal = codeInp.value.trim();
+    if(phoneVal.length !== 11){
+        alert('手机号格式错误');
+        return;
+    }
+    if(codeVal !== '000000'){
+        alert('验证码错误，测试验证码：000000');
+        return;
+    }
+    alert('登录成功，跳转APP首页');
+    mask.style.display = 'none';
+    popBox.classList.remove('pop-show');
+    location.href = "music.html";
+}
+
+//QQ登录（移除协议勾选判断）
+qqLogin.onclick = function(){
+    if(!isAgree){
+        alert("请先阅读并同意隐私政策");
+        return;
+    }
+    alert('模拟QQ授权登录，授权成功跳转APP首页');
+    location.href = "music.html";
+}
+
+//微信登录（移除协议勾选判断）
+wxLogin.onclick = function(){
+    if(!isAgree){
+        alert("请先阅读并同意隐私政策");
+        return;
+    }
+    alert('模拟微信授权登录，授权成功跳转APP首页');
+    location.href = "music.html";
+}

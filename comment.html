@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>评论模拟器</title>
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/comment.css">
+</head>
+<body>
+    <div class="phone-box">
+        <div class="island"></div>
+
+        <div class="container">
+            <h1 class="page-title">评论模拟器</h1>
+            <p class="sub-title">选择场景，开始你的理性表达训练</p>
+
+            <div class="comment-container">
+                <!-- 顶部分类栏 -->
+                <div class="category-scroll">
+                    <div class="category-item active" data-type="hot">
+                        <div class="category-icon">📶</div>
+                        <span>全网热点</span>
+                    </div>
+                    <div class="category-item" data-type="dispute">
+                        <div class="category-icon">🔥</div>
+                        <span>争议话题</span>
+                    </div>
+                    <div class="category-item" data-type="debate">
+                        <div class="category-icon">💬</div>
+                        <span>观点交锋</span>
+                    </div>
+                    <div class="category-item" data-type="refresh">
+                        <div class="category-icon">🔁</div>
+                        <span>更换题库</span>
+                    </div>
+                </div>
+
+                <!-- 训练场景模块：两行交错 + 横向滑动 -->
+                <div class="scene-section">
+                    <div class="scene-title">训练场景</div>
+                    <div class="scene-subtitle">来源网络、日常社交场景</div>
+                    
+                    <div class="scene-scroll">
+                        <!-- 全网热点 标签组 -->
+                        <div class="tag-group tag-group-hot tag-group-show">
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>公共表达</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>生活闲聊</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>职场发言</span>
+                                </div>
+                            </div>
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>网友互动</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>热点点评</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 争议话题 标签组 -->
+                        <div class="tag-group tag-group-dispute">
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>立场辩论</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>矛盾调解</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>反驳回应</span>
+                                </div>
+                            </div>
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>委婉劝说</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>观点对峙</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 观点交锋 标签组 -->
+                        <div class="tag-group tag-group-debate">
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>逻辑阐述</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>补充观点</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>理性分析</span>
+                                </div>
+                            </div>
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>接纳不同</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>深度讨论</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 更换题库 标签组 -->
+                        <div class="tag-group tag-group-refresh">
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>趣味问答</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>趣味吐槽</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>脑洞分享</span>
+                                </div>
+                            </div>
+                            <div class="tag-row">
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>短句创作</span>
+                                </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>随心发言</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 今日话题卡片：参考图1风格 + 评论模拟 -->
+                <div class="topic-card">
+                    <!-- 难度切换栏：舒缓/进阶/高压 -->
+                    <div class="topic-level-tabs">
+                        <div class="level-tab active">🌿 舒缓</div>
+                        <div class="level-tab">⚡ 进阶</div>
+                        <div class="level-tab">🔥 高压</div>
+                    </div>
+
+                    <!-- 话题标题 -->
+                    <div class="topic-title">今日话题：如何看待社交平台上的“情绪泛化”现象？</div>
+
+                    <!-- 评论区模拟 -->
+                    <div class="comment-list">
+                        <div class="comment-item">
+                            <div class="comment-avatar">A</div>
+                            <div class="comment-content">
+                                <div class="comment-name">键盘侠007</div>
+                                <div class="comment-text">现在的年轻人太矫情了，一点小事就破防，真没劲！</div>
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="comment-avatar">B</div>
+                            <div class="comment-content">
+                                <div class="comment-name">理性观察员</div>
+                                <div class="comment-text">你可以反对观点，但别先给人贴标签。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 回复输入框 -->
+                    <div class="reply-input-area">
+                        <textarea class="reply-input" placeholder="请输入你的回应，尽量做到客观、克制、有信息量（回车提交）" maxlength="120"></textarea>
+                        <div class="char-count">0/120</div>
+                    </div>
+
+                    <!-- 快捷表达建议 -->
+                    <div class="quick-reply">
+                        <div class="quick-title">快捷表达建议</div>
+                        <div class="quick-bubbles">
+                            <div class="quick-bubble">每个人看法不一样，互相理解啦。</div>
+                            <div class="quick-bubble">每个人都有自己的判断，尊重不同声音。</div>
+                            <div class="quick-bubble">感谢你的观点，我明白你的意思啦，我们求同存异😊</div>
+                            <div class="quick-bubble">舒缓难度建议先做到语气平和，再追求观点完整。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 训练反馈弹窗（参考音乐弹窗的结构，居中弹出） -->
+<div class="feedback-modal" id="feedbackModal">
+    <div class="feedback-modal-content">
+        <!-- 标题 -->
+        <h2 class="feedback-title">本次训练反馈</h2>
+
+        <!-- 三项评分卡片 -->
+        <div class="score-row">
+            <div class="score-item">
+                <div class="score-label">理性表达</div>
+                <div class="score-value">54</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">共情程度</div>
+                <div class="score-value">48</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">风险等级</div>
+                <div class="score-value risk-low">低</div>
+            </div>
+        </div>
+
+        <!-- 优化建议 -->
+        <div class="feedback-block">
+            <p class="feedback-text">论点还不够清晰。建议补充一个事实依据，并减少情绪化语气词。优化建议：将“你”改为“我们”，降低对立感。</p>
+        </div>
+
+        <!-- 鼓励信息 -->
+        <div class="feedback-block feedback-encourage">
+            <p class="feedback-text">第 2 次训练完成，表现在持续进步。你在热点讨论场景下已经具备稳定表达能力，下一步可尝试“事实 + 感受 + 方案”三段式表达。</p>
+        </div>
+
+        <!-- 关闭按钮 -->
+        <button class="feedback-close-btn" id="feedbackCloseBtn">我知道了</button>
+    </div>
+</div>
+
+        <!-- 底部导航 -->
+<nav class="tab-bar">
+    <a href="music.html" class="tab-item active" data-page="music">
+        <div class="icon-bg"></div>
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+        </svg>
+    </a>
+    <a href="comment.html" class="tab-item" data-page="comment">
+        <div class="icon-bg"></div>
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </svg>
+    </a>
+    <a href="diary.html" class="tab-item" data-page="diary">
+        <div class="icon-bg"></div>
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+        </svg>
+    </a>
+    <a href="transform.html" class="tab-item" data-page="transform">
+    <div class="icon-bg"></div>
+    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+</a>
+    <a href="mine.html" class="tab-item" data-page="mine">
+        <div class="icon-bg"></div>
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+        </svg>
+    </a>
+</nav>
+
+    <script src="js/comment.js"></script>
+</body>
+</html>

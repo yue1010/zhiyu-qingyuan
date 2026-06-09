@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #efefef;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+}
+
+/* 手机容器 */
+.phone-box {
+    position: relative;
+    width: 360px;
+    height: 720px;
+    border: 12px solid #222;
+    border-radius: 48px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.island {
+    width: 130px;
+    height: 32px;
+    background: #000;
+    border-radius: 20px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+
+/* 可滚动内容区 */
+.container {
+    flex: 1;
+    padding: 80px 20px 20px;
+    background: #fff;
+    overflow-y: auto;
+    padding-bottom: 90px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* ================= 1. 个人信息区：头像在上，昵称在下 ================= */
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.avatar-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #bde978;
+    transition: transform 0.2s;
+}
+.avatar-wrap:active .avatar {
+    transform: scale(0.95);
+}
+.badge {
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffb3d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+.username {
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    transition: color 0.2s;
+}
+.username:hover {
+    color: #bde978;
+}
+
+/* ================= 2. 数据看板 ================= */
+.data-section {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+.star-icon {
+    font-size: 18px;
+}
+.section-title {
+    font-size: 17px;
+    color: #24573f;
+    margin: 0;
+}
+.section-subtitle {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.label {
+    width: 60px;
+    font-size: 15px;
+    color: #333;
+}
+.progress-bar {
+    flex: 1;
+    height: 12px;
+    background: #f0f7ed;
+    border-radius: 6px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+}
+.progress-fill.calm {
+    width: 46%;
+    background: #91ccf8;
+}
+.progress-fill.heal {
+    width: 22%;
+    background: #dcf4a1;
+}
+.progress-fill.anxious {
+    width: 18%;
+    background: #bde978;
+}
+.progress-fill.other {
+    width: 14%;
+    background: #999;
+}
+.percent {
+    width: 40px;
+    text-align: right;
+    font-size: 15px;
+    color: #666;
+}
+
+.stats-summary {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    background: #f3fbeb;
+    padding: 12px;
+    border-radius: 16px;
+}
+
+/* ================= 3. 列表模块 ================= */
+.section-wrap {
+    margin-bottom: 20px;
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.list-item:active {
+    background: #f9fdf5;
+}
+.icon {
+    font-size: 18px;
+    margin-right: 12px;
+}
+.text {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+}
+.arrow {
+    color: #999;
+    font-size: 18px;
+}
+
+/* ================= 弹窗（修改昵称/头像） ================= */
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+.modal.show {
+    display: flex;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 20px;
+    width: 85%;
+    max-width: 300px;
+    text-align: center;
+}
+.modal-title {
+    font-size: 20px;
+    color: #24573f;
+    margin-bottom: 16px;
+}
+.modal-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e8f5e8;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.modal-tip {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+.avatar-options {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.avatar-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.avatar-option.selected {
+    border-color: #bde978;
+}
+.avatar-option.upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3fbeb;
+    color: #bde978;
+    font-size: 24px;
+}
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+}
+.modal-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal-btn.cancel {
+    background: #f1f1f1;
+    color: #666;
+}
+.modal-btn.confirm {
+    background: #bde978;
+    color: #24573f;
+}
+
+/* 底部导航栏 - 适配手机360px宽度，纯图标版 */
+.tab-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 导航单项 */
+.tab-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    color: #999;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 选中渐变圆 */
+.tab-item .icon-bg {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd580 0%, #b9f6ca 100%);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+/* 图标尺寸 */
+.tab-item .tab-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* 选中状态 */
+.tab-item.active {
+    color: #0c1105;
+}
+.tab-item.active .icon-bg {
+    opacity: 1;
+    transform: scale(1);
+}
+.tab-item.active .tab-icon {
+    transform: scale(1.05);
+}

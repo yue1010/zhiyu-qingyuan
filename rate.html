@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>给个好评</title>
+    <link rel="stylesheet" href="css/mine.css">
+    <style>
+        .page-top {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            font-size: 24px;
+            color: #24573f;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        .page-title-text {
+            flex: 1;
+            text-align: center;
+            font-size: 22px;
+            color: #24573f;
+        }
+        .rate-card {
+            padding: 25px 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .rate-desc {
+            color: #666;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+        /* 星星容器 */
+        .star-group {
+            font-size: 40px;
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        /* 用空心星星实现，初始灰色 */
+        .star-item {
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            /* 使用空心星星字符，避免浏览器强制渲染为黄色 */
+        }
+        /* 选中后变为黄色实心 */
+        .star-item.active {
+            color: #ffc107;
+        }
+        .rate-btn {
+            margin-top: 25px;
+            padding: 15px 40px;
+            background: #bde978;
+            border: none;
+            border-radius: 16px;
+            color: #24573f;
+            font-size: 18px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .rate-btn:active {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-box">
+        <div class="island"></div>
+
+        <div class="container">
+            <div class="page-top">
+                <span class="back-btn" onclick="history.back()">‹</span>
+                <h2 class="page-title-text">给个好评</h2>
+                <span></span>
+            </div>
+
+            <div class="rate-card">
+                <p class="rate-desc">如果您喜欢本应用，不妨留下好评鼓励一下吧~</p>
+                <div class="star-group">
+                    <!-- 使用空心星星，初始灰色，点击后切换为实心黄色 -->
+                    <span class="star-item">☆</span>
+                    <span class="star-item">☆</span>
+                    <span class="star-item">☆</span>
+                    <span class="star-item">☆</span>
+                    <span class="star-item">☆</span>
+                </div>
+                <button class="rate-btn" id="goStoreBtn">前往评价</button>
+            </div>
+        </div>
+
+        <nav class="tab-bar">
+            <a href="music.html" class="tab-item">
+                <div class="tab-icon">🎵</div>
+                <div class="tab-text">急救包</div>
+            </a>
+            <a href="comment.html" class="tab-item">
+                <div class="tab-icon">💬</div>
+                <div class="tab-text">模拟器</div>
+            </a>
+            <a href="diary.html" class="tab-item">
+                <div class="tab-icon">📖</div>
+                <div class="tab-text">情绪日记</div>
+            </a>
+            <a href="transform.html" class="tab-item">
+                <div class="tab-icon">✨</div>
+                <div class="tab-text">转化坊</div>
+            </a>
+            <a href="mine.html" class="tab-item active">
+                <div class="tab-icon">👤</div>
+                <div class="tab-text">我的</div>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star-item');
+        // 星级点击逻辑：点击当前星，前方全部点亮
+        stars.forEach((star, idx) => {
+            star.addEventListener('click', function () {
+                stars.forEach((s, i) => {
+                    if (i <= idx) {
+                        s.classList.add('active');
+                        // 点亮后替换为实心星星
+                        s.textContent = '★';
+                    } else {
+                        s.classList.remove('active');
+                        // 未点亮时保持空心星星
+                        s.textContent = '☆';
+                    }
+                });
+            });
+        });
+
+        // 前往应用商店
+        document.getElementById('goStoreBtn').addEventListener('click', function () {
+            alert('正在跳转至应用商店...');
+            // 替换下方链接即可真实跳转
+            // window.location.href = "应用商店地址";
+        });
+    </script>
+</body>
+</html>

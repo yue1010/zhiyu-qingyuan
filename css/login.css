@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #efefef;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+}
+.phone-box {
+    width: 360px;
+    height: 720px;
+    border: 12px solid #222222;
+    border-radius: 48px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+.island {
+    width: 130px;
+    height: 32px;
+    background: #000;
+    border-radius: 20px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:99;
+}
+/* 修改布局：纵向空间三等分均匀排布 */
+.login-wrap{
+    width:100%;
+    height:100%;
+    padding: 80px 30px 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: space-around;
+}
+/* 渐变边框外层 */
+.img-box{
+    width:270px;
+    height:220px;
+    border-radius:24px;
+    padding:1px;
+    background: linear-gradient(135deg,#c6f0b9,#8ed870);
+    /* 图片框整体下移 */
+    margin-top:30px;
+}
+/* 内层白色底板 */
+.img-inner{
+    width:100%;
+    height:100%;
+    background:#ffffff;
+    border-radius:22px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:52px;
+    color:#000;
+}
+/* 外层按钮容器：实现外围渐变边框 */
+.btn-outer{
+    border-radius:99px;
+    padding:1px;
+    background:linear-gradient(135deg,#93dd62,#e9f99e);
+}
+/* 内层按钮本体：内部渐变底色 */
+.green-btn{
+    width:210px;
+    height:50px;
+    border-radius:99px;
+    border:none;
+    font-size:24px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#bcf090,#f1fbb8);
+}
+/* 按钮容器，两个按钮固定间距 */
+.btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+}
+.agree-box{
+    margin-bottom:30px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#BDE978;
+    font-size:12px;
+}
+/* 遮罩层 */
+.mask{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.2);
+    position:absolute;
+    left:0;
+    top:0;
+    display:none;
+    z-index:100;
+}
+/* 弹窗：弹性布局，上区块自动占中间空间 */
+.pop-dialog{
+    width:96%;
+    height:70%;
+    background:#fff;
+    border-radius:22px 22px 0 0;
+    padding:35px 28px;
+    position:absolute;
+    left:2%;
+    bottom:-100%;
+    transition: bottom 0.4s ease-out;
+    z-index:101;
+    display:flex;
+    flex-direction:column;
+}
+.pop-show{
+    bottom:0;
+}
+.dialog-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.dialog-top h2{
+    font-size:23px;
+}
+.close-btn{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#bde978;
+    position:relative;
+    cursor:pointer;
+}
+.close-btn::before,.close-btn::after{
+    content:"";
+    width:22px;
+    height:3px;
+    background:#000;
+    position:absolute;
+    top:50%;left:50%;
+}
+.close-btn::before{
+    transform:translate(-50%,-50%) rotate(45deg);
+}
+.close-btn::after{
+    transform:translate(-50%,-50%) rotate(-45deg);
+}
+/* 中间容器：自动撑开剩余高度，内部元素垂直均分 */
+.mid-wrap{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:23px;
+}
+/* 统一外层包裹容器，固定90%宽度 */
+.wrap-box{
+    width:90%;
+}
+/* 输入框固定宽高 */
+.form-item{
+    width:100%;
+    height:55px !important;
+    background:#f3fbeb;
+    border-radius:99px;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+}
+.form-item input{
+    flex:1;
+    border:none;
+    background:transparent;
+    outline:none;
+    font-size:18px;
+}
+/* 验证码容器 */
+.code-row{
+    width:100%;
+    position:relative;
+}
+.get-code{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#96cc49;
+    font-size:16px;
+    cursor:pointer;
+    white-space:nowrap;
+}
+/* 登录按钮 */
+.login-btn{
+    width:90%;
+    height:55px !important;
+    border-radius:99px;
+    border:none;
+    font-size:24px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#BDE978,#E7F79C);
+}
+/* QQ微信登录下移，紧贴协议上方 */
+.other-login{
+    display:flex;
+    justify-content:center;
+    gap:55px;
+    margin-bottom:30px;
+}
+.icon-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+}
+.icon{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#bde978;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+/* 图标图片样式 */
+.icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+/* 协议贴弹窗最底部 */
+.bottom-agree{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#96cc49;
+    font-size:12px;
+}
+.bottom-agree a {
+    color: #96cc49;
+    text-decoration: none;
+}
+
+/* 新增隐私授权弹窗样式 */
+.privacy-mask{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    position:absolute;
+    left:0;top:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+.privacy-pop{
+    width:86%;
+    height:82%;
+    background:#fff;
+    border-radius:16px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+.privacy-top{
+    padding:14px 16px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+.privacy-top h3{
+    font-size:16px;
+    color:#1b5e32;
+    margin-bottom:6px;
+}
+.privacy-tip{
+    font-size:12px;color:#666;
+}
+.privacy-content{
+    flex:1;
+    padding:12px 14px;
+    overflow-y:auto;
+    font-size:12px;
+    color:#333;
+    line-height:1.6;
+}
+.section-title{
+    font-weight:bold;color:#24573f;margin:10px 0 4px;
+}
+.item{
+    display:flex;margin-bottom:5px;
+}
+.dot{
+    color:#22c55e;margin-right:5px;
+}
+.footer-desc{
+    margin-top:15px;font-size:10px;color:#888;text-align:center;
+}
+.privacy-bottom{
+    padding:12px 16px;
+    border-top:1px solid #eee;
+}
+.check-item{
+    display:flex;align-items:center;font-size:12px;color:#555;margin-bottom:10px;
+}
+#agreeBtn{
+    width:100%;height:42px;border:none;border-radius:10px;font-size:15px;
+}
+.agree-disabled{
+    background:#cccccc;color:#fff;cursor:not-allowed;
+}
+.agree-active{
+    background:#42b983;color:#fff;cursor:pointer;
+}

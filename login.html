@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智愈清源-登录页</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="phone-box">
+        <div class="island"></div>
+        <div class="login-wrap">
+            <div class="img-box">
+                <div class="img-inner">
+                    <img src="https://fastly.jsdelivr.net/gh/yue1010/img-bed//Image1010/LOGO.png" style="width:85%;height:85%;object-fit:contain;">
+                </div>
+            </div>
+            <div class="btn-group">
+                <div class="btn-outer">
+                    <!-- 游客进入按钮 -->
+                    <button class="green-btn" id="tourBtn">开启心灵绿洲</button>
+                </div>
+                <div class="btn-outer">
+                    <!-- 点击触发弹窗 -->
+                    <button class="green-btn" id="openPop">一键登录</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========全局隐私授权弹窗========== -->
+        <div class="privacy-mask" id="privacyMask">
+            <div class="privacy-pop">
+                <div class="privacy-top">
+                    <h3>智愈清源 用户隐私政策与服务授权</h3>
+                    <div class="privacy-tip">请仔细阅读，等待<span id="countNum">5</span>秒后可确认</div>
+                </div>
+                <div class="privacy-content">
+                    <div class="section-title">一、数据收集与使用原则</div>
+                    <div class="item"><span class="dot">•</span><span class="text">仅收集匿名化行为数据：仅采集输入节奏、修改频率、停顿分布、情绪标签选择等非语义特征，不收集聊天记录、通讯录、身份信息与原始文本。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">最小必要原则：数据仅用于情绪识别、音乐生成与功能优化，不用于广告推送、用户画像或其他无关用途。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">本地优先：语音记录与输入特征仅在本地完成初步分析，核心原始数据不上云服务器。</span></div>
+
+                    <div class="section-title">二、核心功能与数据用途</div>
+                    <div class="item"><span class="dot">•</span><span class="text">音乐急救包：根据情绪标签生成个性化疗愈音乐，数据仅用于单次服务。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">评论模拟器：模拟社交场景训练理性表达，行为数据仅用于本地反馈与算法优化。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">情绪日记：内容可选择本地存储或加密上传，仅用于个人情绪趋势分析。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">善意转化坊：AI 生成内容仅在当前会话生效，不关联个人身份。</span></div>
+
+                    <div class="section-title">三、隐私安全保障</div>
+                    <div class="item"><span class="dot">•</span><span class="text">数据传输全程采用 HTTPS 加密，数据库敏感信息加密存储并严格权限控制。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">遵守《中华人民共和国个人信息保护法》《网络安全法》等法律法规。</span></div>
+
+                    <div class="section-title">四、用户权利</div>
+                    <div class="item"><span class="dot">•</span><span class="text">你有权随时关闭数据收集、清除本地数据、注销小程序授权。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">你可查看、导出本人脱敏数据，或申请删除相关使用记录。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">拒绝授权不影响基础功能使用，但情绪识别与个性化服务将无法启用。</span></div>
+
+                    <div class="section-title">五、服务提示</div>
+                    <div class="item"><span class="dot">•</span><span class="text">本工具为情绪辅助工具，不替代专业心理咨询、医疗诊断与治疗。</span></div>
+                    <div class="item"><span class="dot">•</span><span class="text">如遇严重心理困扰，请及时联系专业心理机构或心理健康中心。</span></div>
+
+                    <div class="footer-desc">智愈清源项目团队 | V2.0 2026.06</div>
+                </div>
+                <div class="privacy-bottom">
+                    <label class="check-item">
+                        <input type="checkbox" id="privacyCheck" disabled>
+                        <span>我已完整阅读并同意隐私政策与用户协议</span>
+                    </label>
+                    <button id="agreeBtn" class="agree-disabled" disabled>确认并进入APP</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 原有登录弹窗（无额外协议勾选） -->
+        <div class="mask" id="mask"></div>
+        <div class="pop-dialog" id="popBox">
+            <div class="dialog-top">
+                <h2>手机验证登录</h2>
+                <div class="close-btn" id="closePop"></div>
+            </div>
+            <div class="mid-wrap">
+                <div class="wrap-box">
+                    <div class="form-item">
+                        <input type="text" id="phoneInp" placeholder="输入手机号码">
+                    </div>
+                </div>
+                <div class="wrap-box">
+                    <div class="code-row">
+                        <div class="form-item">
+                            <input type="text" id="codeInp" placeholder="输入验证码">
+                        </div>
+                        <span class="get-code" id="getCodeBtn">获取验证码</span>
+                    </div>
+                </div>
+                <button class="login-btn" id="submitLogin">登录</button>
+            </div>
+            <div class="other-login">
+                <div class="icon-item" id="qqLogin">
+                    <div class="icon">
+                        <img src="https://fastly.jsdelivr.net/gh/yue1010/img-bed//Image1010/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260605221252_538_2.png" alt="QQ登录">
+                    </div>
+                    <span>QQ登录</span>
+                </div>
+                <div class="icon-item" id="wxLogin">
+                    <div class="icon">
+                        <img src="https://fastly.jsdelivr.net/gh/yue1010/img-bed//Image1010/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260605221251_537_2.png" alt="微信登录">
+                    </div>
+                    <span>微信登录</span>
+                </div>
+            </div>
+            <div class="bottom-agree">
+                <span>登录即表示您同意<a href="protocol.html">《用户协议》</a>和<a href="privacy.html">《隐私条款》</a></span>
+            </div>
+        </div>
+    </div>
+<script src="./js/login.js"></script>
+</body>
+</html>
