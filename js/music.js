@@ -22,21 +22,21 @@ const songLists = {
             artist: "By: Meditation Hub", 
             tag: "释放愤怒", 
             cover: "linear-gradient(135deg, #ff6b6b 0%, #ff8fab 50%, #ff6b6b 100%)",
-            coverImg: "/image/3.jpg"
+            coverImg: "./image/3.jpg"
         },
         { 
             title: "Calm Down", 
             artist: "By: Lofi Girl", 
             tag: "愤怒舒缓", 
             cover: "linear-gradient(135deg, #ff9999 0%, #cc0000 50%, #ff9999 100%)",
-            coverImg: "/image/6.jpg"
+            coverImg: "./image/6.jpg"
         },
         { 
             title: "Peaceful Mind", 
             artist: "By: Relaxing Music", 
             tag: "情绪平复", 
             cover: "linear-gradient(135deg, #ffcccc 0%, #ff3333 50%, #ffcccc 100%)",
-            coverImg: "/image/2.jpg"
+            coverImg: "./image/2.jpg"
         }
     ],
     anxiety: [
@@ -45,21 +45,21 @@ const songLists = {
             artist: "By: Calm Music", 
             tag: "缓解焦虑", 
             cover: "linear-gradient(135deg, #fff8d9 0%, #cc8822 50%, #fff8d9 100%)",
-            coverImg: "/image/6.jpg"
+            coverImg: "./image/6.jpg"
         },
         { 
             title: "Stress Away", 
             artist: "By: Calm Beats", 
             tag: "放松神经", 
             cover: "linear-gradient(135deg, #fff2cc 0%, #ffbb33 50%, #fff2cc 100%)",
-            coverImg: "/image/4.jpg"
+            coverImg: "./image/4.jpg"
         },
         { 
             title: "Clear Thoughts", 
             artist: "By: Mindful Sounds", 
             tag: "思绪清明", 
             cover: "linear-gradient(135deg, #fff9e6 0%, #ffcc66 50%, #fff9e6 100%)",
-            coverImg: "/image/7.jpg"
+            coverImg: "./image/7.jpg"
         }
     ],
     sad: [
@@ -68,21 +68,21 @@ const songLists = {
             artist: "By: Soft Piano", 
             tag: "委屈治愈", 
             cover: "linear-gradient(135deg, #e8f4ff 0%, #3377cc 50%, #e8f4ff 100%)",
-            coverImg: "/image/2.jpg"
+            coverImg: "./image/2.jpg"
         },
         { 
             title: "Let It Go", 
             artist: "By: Gentle Strings", 
             tag: "情绪释放", 
             cover: "linear-gradient(135deg, #d9e8ff 0%, #4488dd 50%, #d9e8ff 100%)",
-            coverImg: "/image/9.jpg"
+            coverImg: "./image/9.jpg"
         },
         { 
             title: "Warm Embrace", 
             artist: "By: Comfort Tones", 
             tag: "温柔抚慰", 
             cover: "linear-gradient(135deg, #cce0ff 0%, #5599ee 50%, #cce0ff 100%)",
-            coverImg: "/image/1.jpg"
+            coverImg: "./image/1.jpg"
         }
     ],
     defeat: [
@@ -91,21 +91,21 @@ const songLists = {
             artist: "By: Inspiring Music", 
             tag: "重拾信心", 
             cover: "linear-gradient(135deg, #f0f7f0 0%, #556666 50%, #f0f7f0 100%)",
-            coverImg: "/image/6.jpg"
+            coverImg: "./image/6.jpg"
         },
         { 
             title: "New Beginnings", 
             artist: "By: Motivational Beats", 
             tag: "整装再发", 
             cover: "linear-gradient(135deg, #e6efeb 0%, #667777 50%, #e6efeb 100%)",
-            coverImg: "/image/3.jpg"
+            coverImg: "./image/3.jpg"
         },
         { 
             title: "Step Forward", 
             artist: "By: Forward Sounds", 
             tag: "稳步前行", 
             cover: "linear-gradient(135deg, #e0ebe5 0%, #778888 50%, #e0ebe5 100%)",
-            coverImg: "/image/4.jpg"
+            coverImg: "./image/4.jpg"
         }
     ],
     calm: [
@@ -114,21 +114,21 @@ const songLists = {
             artist: "By: Nature Sounds", 
             tag: "内心平静", 
             cover: "linear-gradient(135deg, #e8f7e8 0%, #2d884a 50%, #e8f7e8 100%)",
-            coverImg: "/image/4.jpg"
+            coverImg: "./image/4.jpg"
         },
         { 
             title: "Still Waters", 
             artist: "By: Forest Melodies", 
             tag: "心如止水", 
             cover: "linear-gradient(135deg, #dcf0dc 0%, #339955 50%, #dcf0dc 100%)",
-            coverImg: "/image/7.jpg"
+            coverImg: "./image/7.jpg"
         },
         { 
             title: "Tranquil Mind", 
             artist: "By: Calm Waves", 
             tag: "宁静致远", 
             cover: "linear-gradient(135deg, #d0e8d0 0%, #44aa66 50%, #d0e8d0 100%)",
-            coverImg: "/image/5.jpg"
+            coverImg: "./image/5.jpg"
         }
     ],
     relax: [
@@ -137,21 +137,21 @@ const songLists = {
             artist: "By: Ambient Music", 
             tag: "深度放松", 
             cover: "linear-gradient(135deg, #f0f5f5 0%, #2288cc 50%, #f0f5f5 100%)",
-            coverImg: "/image/5.jpg"
+            coverImg: "./image/5.jpg"
         },
         { 
             title: "Body & Soul", 
             artist: "By: Spa Tones", 
             tag: "身心舒缓", 
             cover: "linear-gradient(135deg, #e6f0f5 0%, #3399dd 50%, #e6f0f5 100%)",
-            coverImg: "/image/8.jpg"
+            coverImg: "./image/8.jpg"
         },
         { 
             title: "Light & Easy", 
             artist: "By: Breezy Beats", 
             tag: "轻松一刻", 
             cover: "linear-gradient(135deg, #dceaf5 0%, #44aadd 50%, #dceaf5 100%)",
-            coverImg: "/image/7.jpg"
+            coverImg: "./image/7.jpg"
         }
     ],
     heal: [
@@ -160,21 +160,21 @@ const songLists = {
             artist: "By: Healing Tones", 
             tag: "灵魂治愈", 
             cover: "linear-gradient(135deg, #eaf9ef 0%, #229977 50%, #eaf9ef 100%)",
-            coverImg: "/image/1.jpg"
+            coverImg: "./image/1.jpg"
         },
         { 
             title: "Light Within", 
             artist: "By: Hope Melodies", 
             tag: "内心之光", 
             cover: "linear-gradient(135deg, #dcf7e4 0%, #33aa88 50%, #dcf7e4 100%)",
-            coverImg: "/image/9.jpg"
+            coverImg: "./image/9.jpg"
         },
         { 
             title: "Heart Mender", 
             artist: "By: Warm Harmonies", 
             tag: "温柔疗愈", 
             cover: "linear-gradient(135deg, #d0f2dd 0%, #44bb99 50%, #d0f2dd 100%)",
-            coverImg: "/image/8.jpg"
+            coverImg: "./image/8.jpg"
         }
     ],
     peace: [
@@ -183,21 +183,21 @@ const songLists = {
             artist: "By: Meditation Music", 
             tag: "全然安心", 
             cover: "linear-gradient(135deg, #f5f5f5 0%, #8855aa 50%, #f5f5f5 100%)",
-            coverImg: "/image/7.jpg"
+            coverImg: "./image/7.jpg"
         },
         { 
             title: "Safe & Sound", 
             artist: "By: Comfort Beats", 
             tag: "安心港湾", 
             cover: "linear-gradient(135deg, #ebe6f0 0%, #9966bb 50%, #ebe6f0 100%)",
-            coverImg: "/image/5.jpg"
+            coverImg: "./image/5.jpg"
         },
         { 
             title: "No Worries", 
             artist: "By: Carefree Sounds", 
             tag: "无忧时刻", 
             cover: "linear-gradient(135deg, #e6e0eb 0%, #aa77cc 50%, #e6e0eb 100%)",
-            coverImg: "/image/1.jpg"
+            coverImg: "./image/1.jpg"
         }
     ],
     default: [
@@ -206,7 +206,7 @@ const songLists = {
             artist: "By: Sarah Wins", 
             tag: "治愈系", 
             cover: "linear-gradient(135deg, #ffccd5 0%, #ff8fab 50%, #ffc2e2 100%)",
-            coverImg: "/image/1.jpg"
+            coverImg: "./image/1.jpg"
         }
     ]
 };
