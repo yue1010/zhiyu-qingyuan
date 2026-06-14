@@ -98,7 +98,9 @@ getCodeBtn.onclick = function(){
     }
 
     // 核心：自动填充验证码为 000000
-    codeInp.value = "000000";
+   codeInp.value = '';
+        codeInp.focus();
+        codeInp.value = "000000";
 
     // 60秒倒计时
     let cd = 60;
