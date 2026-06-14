@@ -1,4 +1,4 @@
 // 1500毫秒后跳转同目录login.html
 setTimeout(()=>{
     location.href = "./login.html"
-},7000)
+},5000)
