@@ -24,11 +24,11 @@ const topicData = {
                 "滤镜是个人选择，只要不涉及虚假宣传就好啦。",
                 "真实的样子也很好看，没必要过度追求完美。",
                 "平台也应该规范一下，减少虚假信息传播。",
-                "进阶难度可以尝试提出建设性的看法。"
+                "进阶难度可以尝试给出建设性的看法。"
             ]
         },
         hard: {
-            title: "今日话题：如何看待“网络暴力”对当事人的影响？",
+            title: "如何看待“网络暴力”对当事人的影响？",
             comments: [
                 { name: "跟风路人", text: "谁让她自己行为不端，活该被骂！" },
                 { name: "冷静旁观者", text: "就算有问题，也不该用网络暴力的方式去攻击。" }
@@ -37,13 +37,13 @@ const topicData = {
                 "网络暴力是违法行为，不应该用伤害他人的方式表达观点。",
                 "我们可以批评错误，但不能进行人身攻击和网暴。",
                 "平台应该加强监管，遏制网络暴力的蔓延。",
-                "高压难度请保持理性，避免被情绪带偏。"
+                "高压难度请保持理性，不被情绪带偏。"
             ]
         }
     },
     dispute: {
         easy: {
-            title: "今日话题：职场中遇到“甩锅”同事，你会怎么处理？",
+            title: "职场中遇到“甩锅”同事，你会怎么处理？",
             comments: [
                 { name: "委屈新人", text: "凭什么锅都让我背，我又不是背锅侠！" },
                 { name: "职场老油条", text: "遇到这种人，一定要留好证据，别被人卖了还帮着数钱。" }
@@ -56,7 +56,7 @@ const topicData = {
             ]
         },
         mid: {
-            title: "今日话题：朋友向你吐槽同事，你会怎么回应？",
+            title: "朋友向你吐槽同事，你会怎么回应？",
             comments: [
                 { name: "八卦小能手", text: "他也太过分了吧！我早就看他不顺眼了！" },
                 { name: "理性好友", text: "吐槽归吐槽，背后说人坏话不太好哦。" }
@@ -65,414 +65,529 @@ const topicData = {
                 "先倾听对方的情绪，让他把负面情绪发泄出来。",
                 "适当安慰就好，不要跟着一起吐槽别人。",
                 "可以引导他往解决问题的方向想，而不是单纯抱怨。",
-                "进阶难度可以尝试提出建设性建议。"
+                "进阶难度可以尝试给出建设性建议。"
             ]
         },
         hard: {
-            title: "今日话题：发现朋友在背后说你坏话，你会怎么办？",
+            title: "发现朋友在背后说你坏话，你会怎么办？",
             comments: [
                 { name: "心碎本人", text: "我把他当好朋友，他居然背后捅我刀子！" },
                 { name: "人间清醒", text: "这种朋友不值得深交，保持距离就好。" }
             ],
             quickReplies: [
-                "先确认事实，不要轻信别人的传言。",
-                "如果是误会，可以找机会当面说清楚。",
-                "如果是事实，那这个人不值得深交，慢慢疏远就好。",
+                "先确认事实，不要轻信传言。",
+                "如果是误会，可以当面说清楚。",
+                "如果是事实，慢慢疏远就好。",
                 "高压难度请保持冷静，避免做出冲动的决定。"
             ]
         }
     },
     debate: {
         easy: {
-            title: "今日话题：你支持“婚前财产公证”吗？",
+            title: "你支持“婚前财产公证”吗？",
             comments: [
-                { name: "现实主义", text: "必须公证！不然离婚了财产都被分走了！" },
-                { name: "理想主义", text: "谈钱伤感情，公证了就没有信任感了。" }
+                { name: "现实主义", text: "必须公证！不然离婚财产都被分走了！" },
+                { name: "理想主义", text: "谈钱伤感情，公证就没信任感了。" }
             ],
             quickReplies: [
-                "公证是为了保护双方的权益，不是不信任。",
-                "婚前财产公证可以避免后续很多纠纷。",
-                "只要双方都能接受，公证与否都可以。",
-                "舒缓难度建议客观看待这个问题。"
+                "公证是保护双方权益，不是不信任。",
+                "婚前公证能避免很多纠纷。",
+                "双方接受就没问题。",
+                "舒缓难度客观看待即可。"
             ]
         },
         mid: {
-            title: "今日话题：如何看待“躺平”和“内卷”的争议？",
+            title: "如何看待“躺平”和“内卷”的争议？",
             comments: [
-                { name: "躺平选手", text: "卷不动了，躺平不香吗？干嘛非要内耗自己！" },
-                { name: "内卷达人", text: "躺平就是摆烂，年轻就要努力奋斗！" }
+                { name: "躺平选手", text: "卷不动了，躺平不香吗？" },
+                { name: "内卷达人", text: "年轻就该努力，躺平就是摆烂。" }
             ],
             quickReplies: [
-                "每个人的生活方式不同，没必要互相指责。",
-                "躺平不是摆烂，是一种对自己生活的选择。",
-                "内卷也不是原罪，关键是要卷得有意义。",
-                "进阶难度可以尝试辩证地分析问题。"
+                "生活方式因人而异，不必互相指责。",
+                "躺平不是摆烂，是自我选择。",
+                "内卷也要卷得有意义。",
+                "进阶难度辩证分析问题。"
             ]
         },
         hard: {
-            title: "今日话题：如何看待“性别对立”的言论？",
+            title: "如何看待“性别对立”的言论？",
             comments: [
-                { name: "极端发言者", text: "现在的男/女的都不是好东西！" },
-                { name: "理性发声者", text: "不能以偏概全，每个群体里都有好有坏。" }
+                { name: "极端发言者", text: "现在的男/女都不行！" },
+                { name: "理性发声者", text: "不能以偏概全。" }
             ],
             quickReplies: [
-                "性别对立只会激化矛盾，对谁都没有好处。",
-                "我们应该反对极端言论，尊重每个个体的差异。",
-                "不能因为少数人的行为，就否定整个群体。",
-                "高压难度请保持中立，避免被极端言论带偏。"
+                "对立言论只会激化矛盾。",
+                "尊重每个独立个体。",
+                "拒绝极端观点。",
+                "高压难度保持中立。"
             ]
         }
     },
     refresh: {
         easy: {
-            title: "今日话题：你觉得“拖延症”能治好吗？",
+            title: "你觉得“拖延症”能治好吗？",
             comments: [
-                { name: "重度拖延", text: "我这辈子是没救了，什么事都要拖到最后一天！" },
-                { name: "自律达人", text: "拖延症就是懒，逼自己一把就好了。" }
+                { name: "重度拖延", text: "我做事总拖到最后。" },
+                { name: "自律达人", text: "拖延本质就是懒。" }
             ],
             quickReplies: [
-                "可以从小事做起，慢慢养成不拖延的习惯。",
-                "拖延症可能和焦虑有关，先找到根源再解决。",
-                "不用逼自己一下子改过来，慢慢来就好。",
-                "舒缓难度建议多鼓励，少指责。"
+                "从小习惯慢慢改正。",
+                "先找到焦虑根源。",
+                "不用急于求成。",
+                "舒缓难度多鼓励自己。"
             ]
         },
         mid: {
-            title: "今日话题：如何看待“碎片化学习”的效果？",
+            title: "如何看待“碎片化学习”？",
             comments: [
-                { name: "碎片化学习者", text: "刷短视频也能学到很多东西，碎片化学习真香！" },
-                { name: "深度学习者", text: "碎片化学习都是伪学习，根本学不到东西！" }
+                { name: "碎片化学习者", text: "刷视频也能学到东西。" },
+                { name: "深度学习者", text: "碎片学习不算真学习。" }
             ],
             quickReplies: [
-                "碎片化学习可以作为补充，但不能替代系统学习。",
-                "关键是要把学到的知识串联起来，形成体系。",
-                "不同的人适合不同的学习方式，没必要否定一种。",
-                "进阶难度可以分析两种学习方式的优缺点。"
+                "碎片学习可做补充。",
+                "知识需要串联成体系。",
+                "因人而异选择方式。",
+                "进阶难度分析优缺点。"
             ]
         },
         hard: {
-            title: "今日话题：如何看待“网红带货”的争议？",
+            title: "如何看待“网红带货”的争议？",
             comments: [
-                { name: "消费者", text: "很多网红卖的东西都是假货，专门骗粉丝的钱！" },
-                { name: "主播粉丝", text: "我家主播卖的东西都很好，你自己不会挑别赖别人！" }
+                { name: "消费者", text: "很多网红卖假货坑粉丝。" },
+                { name: "主播粉丝", text: "东西不错，别乱抹黑。" }
             ],
             quickReplies: [
-                "网红带货本身是一种销售模式，关键是要规范。",
-                "消费者也要理性消费，不要盲目跟风购买。",
-                "平台和监管部门应该加强监管，打击假货和虚假宣传。",
-                "高压难度请客观分析问题，避免被粉丝情绪影响。"
+                "带货是正常模式，需要规范。",
+                "消费保持理性。",
+                "加强平台监管。",
+                "高压难度客观分析。"
             ]
         }
     }
 };
 
-// 动态反馈配置（可根据输入内容、难度、分类动态生成反馈）
+// 动态反馈配置【新版评分规则，修复满分BUG】
 const feedbackConfig = {
-    // 理性表达评分规则：根据输入的关键词、长度、语气词数量计算
     getRationalScore: (inputText, level) => {
-        // 基础分
-        let score = 60;
-        const levelWeights = { easy: 0, mid: -5, hard: -10 };
+        let score = 50;
+        const levelWeights = { easy: 3, mid: 0, hard: -3 };
         score += levelWeights[level];
 
-        // 加分项：包含理性关键词
-        const rationalKeywords = ["客观", "理性", "理解", "尊重", "事实", "依据", "沟通", "求同存异"];
-        rationalKeywords.forEach(keyword => {
-            if (inputText.includes(keyword)) score += 5;
+        const rationalKeys = ["客观", "理性", "理解", "尊重", "事实", "依据", "沟通", "求同存异", "辩证", "多角度"];
+        rationalKeys.forEach(word => {
+            if (inputText.includes(word)) score += 4;
         });
 
-        // 减分项：包含情绪化关键词
-        const emotionalKeywords = ["垃圾", "傻逼", "活该", "都怪", "绝对", "肯定", "必须", "无脑"];
-        emotionalKeywords.forEach(keyword => {
-            if (inputText.includes(keyword)) score -= 10;
+        const emotionBadKeys = ["垃圾", "活该", "都怪", "绝对", "肯定", "必须", "无脑", "全是", "一律", "简直"];
+        emotionBadKeys.forEach(word => {
+            if (inputText.includes(word)) score -= 8;
         });
 
-        // 长度加分（适中长度）
-        if (inputText.length >= 20 && inputText.length <= 80) score += 5;
-        // 过长/过短减分
-        if (inputText.length < 10) score -= 8;
-        if (inputText.length > 100) score -= 5;
-
-        // 语气词减分（啊、哦、呢、吧、嘛、咯、哈）
         const modalWords = ["啊", "哦", "呢", "吧", "嘛", "咯", "哈"];
-        const modalCount = modalWords.reduce((count, word) => count + (inputText.includes(word) ? 1 : 0), 0);
-        score -= modalCount * 2;
+        modalWords.forEach(word => {
+            if (inputText.includes(word)) score -= 2;
+        });
 
-        // 限制分数范围
+        const len = inputText.length;
+        if (len >= 20 && len <= 90) score += 6;
+        else if (len < 10) score -= 12;
+        else if (len > 110) score -= 6;
+
         return Math.max(0, Math.min(100, score));
     },
 
-    // 共情程度评分规则
     getEmpathyScore: (inputText, level) => {
         let score = 50;
-        const levelWeights = { easy: 5, mid: 0, hard: -5 };
+        const levelWeights = { easy: 3, mid: 0, hard: -3 };
         score += levelWeights[level];
 
-        // 加分项：包含共情关键词
-        const empathyKeywords = ["感受", "理解", "体谅", "不容易", "辛苦了", "换位思考", "在意"];
-        empathyKeywords.forEach(keyword => {
-            if (inputText.includes(keyword)) score += 6;
+        const empathyKeys = ["感受", "理解", "体谅", "不容易", "辛苦了", "换位思考", "在意", "包容", "换位思考"];
+        empathyKeys.forEach(word => {
+            if (inputText.includes(word)) score += 5;
         });
 
-        // 减分项：指责性词汇
-        const blameKeywords = ["你错了", "怪你", "活该", "不懂", "不明白", "自私"];
-        blameKeywords.forEach(keyword => {
-            if (inputText.includes(keyword)) score -= 8;
+        const blameKeys = ["你错了", "怪你", "活该", "不懂", "自私", "差劲", "可笑", "没必要"];
+        blameKeys.forEach(word => {
+            if (inputText.includes(word)) score -= 9;
         });
+
+        if (/就这|呵呵|无语/.test(inputText)) score -= 10;
+
+        const len = inputText.length;
+        if (len >= 15 && len <= 80) score += 4;
+        else if (len < 8) score -= 8;
 
         return Math.max(0, Math.min(100, score));
     },
 
-    // 风险等级判定
-    getRiskLevel: (rationalScore, empathyScore) => {
-        const total = rationalScore + empathyScore;
-        if (total >= 100) return { level: "low", text: "低" };
-        if (total >= 60) return { level: "mid", text: "中" };
+    getRiskLevel: (r, e) => {
+        const total = r + e;
+        if (total >= 130) return { level: "low", text: "低" };
+        if (total >= 80) return { level: "mid", text: "中" };
         return { level: "high", text: "高" };
     },
 
-    // 动态生成优化建议
-    getOptimizationTips: (inputText, rationalScore, empathyScore, level) => {
+    getOptimizationTips: (r, e, level) => {
         const tips = [];
-        
-        if (rationalScore < 50) {
-            tips.push("论点还不够清晰，建议补充事实依据，减少情绪化语气词");
-        } else if (rationalScore < 70) {
-            tips.push("理性表达较好，可进一步优化逻辑，让观点更有说服力");
-        } else {
-            tips.push("理性表达优秀，能客观看待问题并给出有依据的观点");
-        }
+        if (r < 40) tips.push("理性不足，避免极端用语，尽量客观陈述观点");
+        else if (r < 70) tips.push("理性尚可，可减少情绪化语气，强化逻辑");
+        else tips.push("理性表达优秀，观点客观中立");
 
-        if (empathyScore < 50) {
-            tips.push("共情程度不足，可尝试使用更包容的语言，比如将“你”改为“我们”降低对立感");
-        } else if (empathyScore < 70) {
-            tips.push("共情表现良好，可适当加入换位思考的表达，增强情感共鸣");
-        } else {
-            tips.push("共情能力优秀，能很好地理解并回应他人的情绪");
-        }
+        if (e < 40) tips.push("共情较弱，多换位思考，减少指责语气");
+        else if (e < 70) tips.push("共情一般，可增加体谅、安抚类表达");
+        else tips.push("共情表现优秀，懂得换位思考");
 
-        // 难度适配建议
         const levelTips = {
-            easy: "舒缓难度下，先做到语气平和，再逐步提升观点完整性",
-            mid: "进阶难度可尝试提出建设性方案，而非单纯表达观点",
-            hard: "高压难度下需保持中立，避免被极端言论带偏，坚持理性分析"
+            easy: "舒缓难度：优先保证语气平和",
+            mid: "进阶难度：尝试给出建设性看法",
+            hard: "高压难度：保持中立，不被情绪带偏"
         };
         tips.push(levelTips[level]);
-
         return tips.join("。");
     },
 
-    // 动态生成鼓励信息
-    getEncouragement: (trainCount, category, rationalScore, empathyScore) => {
-        const totalScore = rationalScore + empathyScore;
-        let progressText = "";
-        
-        if (trainCount <= 3) {
-            progressText = "入门阶段，正在建立理性表达的基础习惯";
-        } else if (trainCount <= 8) {
-            progressText = "提升阶段，表达能力正在稳步进步";
-        } else {
-            progressText = "熟练阶段，已具备稳定的理性表达能力";
-        }
-
-        const categoryTips = {
-            hot: "热点讨论场景",
-            dispute: "争议调解场景",
-            debate: "观点交锋场景",
-            refresh: "趣味表达场景"
-        };
-
-        let encouragement = `第 ${trainCount} 次训练完成，${progressText}。你在${categoryTips[category]}下的表现${totalScore >= 100 ? "优秀" : totalScore >= 70 ? "良好" : "仍需提升"}`;
-        
-        if (totalScore >= 120) {
-            encouragement += "，下一步可尝试“事实 + 感受 + 方案”三段式表达，让观点更有深度";
-        } else if (totalScore >= 80) {
-            encouragement += "，建议多尝试不同场景的表达训练，拓宽表达思路";
-        } else {
-            encouragement += "，可先从模仿快捷表达建议开始，逐步提升表达质量";
-        }
-
-        return encouragement;
+    getEncouragement: (cnt, cat, r, e) => {
+        const total = r + e;
+        let stage = cnt <= 3 ? "入门阶段" : cnt <= 8 ? "提升阶段" : "熟练阶段";
+        const catMap = { hot: "热点讨论", dispute: "争议调解", debate: "观点交锋", refresh: "趣味表达" };
+        let desc = total >= 130 ? "优秀" : total >= 80 ? "良好" : "有待加强";
+        let str = `第 ${cnt} 次训练完成，${stage}。你在${cat}场景表现${desc}`;
+        if (total >= 130) str += "，可尝试「事实+感受+方案」三段式表达";
+        else if (total >= 80) str += "，继续练习可进一步提升表达能力";
+        else str += "，建议先模仿示例话术，慢慢调整语气";
+        return str;
     }
 };
 
-// 难度映射
-const levelMap = {
-    0: "easy",
-    1: "mid",
-    2: "hard"
-};
-
-// 训练次数记录（可持久化到localStorage）
+const levelMap = { 0: "easy", 1: "mid", 2: "hard" };
 let trainCount = localStorage.getItem("commentTrainCount") ? Number(localStorage.getItem("commentTrainCount")) : 0;
+const HISTORY_KEY = "trainHistoryList";
+// 标记是否首次提交
+let isFirstSubmit = true;
 
-// ========== 底部导航 跳转+高亮 ==========
-const tabItems = document.querySelectorAll('.tab-item');
-const currentFileName = window.location.pathname.split('/').pop().replace('.html','');
-tabItems.forEach(tab => {
-    const page = tab.dataset.page;
-    if(page === currentFileName){
-        tab.classList.add('active');
-    }else{
-        tab.classList.remove('active');
+// ========= 音乐弹窗、播放器相关变量 =========
+const musicModal = document.getElementById('musicModal');
+const closeBtn = document.getElementById('closeBtn');
+const playBtn = document.getElementById('playBtn');
+const likeBtn = document.getElementById('likeBtn');
+const progressFill = document.querySelector('.progress-fill');
+const currentTimeEl = document.querySelector('.current-time');
+const totalTimeEl = document.querySelector('.total-time');
+const albumCover = document.querySelector('.album-cover');
+let isPlaying = false;
+let progressInterval = null;
+
+// 格式化时间
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+// 重置进度条
+function resetProgress() {
+    progressFill.style.width = '0%';
+    currentTimeEl.textContent = '00:00';
+    if (progressInterval) clearInterval(progressInterval);
+}
+// 开启进度条
+function startProgress() {
+    const totalSeconds = 200;
+    totalTimeEl.textContent = formatTime(totalSeconds);
+    let currentSeconds = 0;
+    progressInterval = setInterval(() => {
+        if (!isPlaying) return;
+        currentSeconds += 0.1;
+        const progress = (currentSeconds / totalSeconds) * 100;
+        progressFill.style.width = `${progress}%`;
+        currentTimeEl.textContent = formatTime(currentSeconds); // 【关键：更新当前时间】
+        if (progress >= 100) {
+            resetProgress();
+            isPlaying = false;
+            playBtn.textContent = '▶';
+        }
+    }, 100);
+}
+// 播放/暂停
+function togglePlay() {
+    isPlaying = !isPlaying;
+    playBtn.textContent = isPlaying ? '| |' : '▶';
+    
+    if (isPlaying) {
+        albumCover.classList.add('playing');
+        startProgress();
+    } else {
+        albumCover.classList.remove('playing');
+    }
+}
+// 收藏按钮点击事件
+likeBtn.addEventListener('click', function() {
+    if (this.textContent === '🤍') {
+        this.textContent = '❤️';
+    } else {
+        this.textContent = '🤍';
     }
 });
-
-// 2. 顶部分类栏 联动切换训练场景 + 题目
-const categoryItems = document.querySelectorAll('.category-item');
-const tagGroups = document.querySelectorAll('.tag-group');
-const topicTitleEl = document.querySelector('.topic-title');
-const commentListEl = document.querySelector('.comment-list');
-const quickBubblesEl = document.querySelector('.quick-bubbles');
-const replyInputEl = document.querySelector('.reply-input');
-const charCountEl = document.querySelector('.char-count');
-const feedbackModal = document.getElementById('feedbackModal');
-const feedbackCloseBtn = document.getElementById('feedbackCloseBtn');
-
-categoryItems.forEach(item => {
-    item.addEventListener('click', function() {
-        categoryItems.forEach(cat => cat.classList.remove('active'));
-        this.classList.add('active');
-
-        const type = this.dataset.type;
-        tagGroups.forEach(group => group.classList.remove('tag-group-show'));
-        const targetGroup = document.querySelector(`.tag-group-${type}`);
-        if (targetGroup) {
-            targetGroup.classList.add('tag-group-show');
-        }
-        document.querySelector('.scene-scroll').scrollLeft = 0;
-
-        // 切换题目
-        updateTopic();
-    });
+// 打开音乐弹窗
+function openMusicModal() {
+    resetProgress();
+    musicModal.classList.add('active');
+    albumCover.classList.add('playing');
+    isPlaying = true;
+    playBtn.textContent = '| |';
+    startProgress();
+}
+// 关闭音乐弹窗 → 打开反馈弹窗
+closeBtn.addEventListener('click', () => {
+    musicModal.classList.remove('active');
+    albumCover.classList.remove('playing');
+    isPlaying = false;
+    if (progressInterval) clearInterval(progressInterval);
+    feedbackModal.classList.add('active');
 });
 
-// 3. 难度切换（舒缓/进阶/高压）
-const levelTabs = document.querySelectorAll('.level-tab');
-levelTabs.forEach((tab, index) => {
-    tab.addEventListener('click', function() {
-        levelTabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-        updateTopic();
-    });
-});
-
-// 更新题目和评论的函数
-function updateTopic() {
-    const activeCategory = document.querySelector('.category-item.active').dataset.type;
-    const activeLevelIndex = Array.from(levelTabs).findIndex(t => t.classList.contains('active'));
-    const levelKey = levelMap[activeLevelIndex];
-    const data = topicData[activeCategory][levelKey];
-
-    // 更新标题
-    topicTitleEl.textContent = data.title;
-
-    // 更新评论列表
-    commentListEl.innerHTML = '';
-    data.comments.forEach(comment => {
-        const commentItem = document.createElement('div');
-        commentItem.className = 'comment-item';
-        commentItem.innerHTML = `
-            <div class="comment-avatar">${comment.name.charAt(0)}</div>
-            <div class="comment-content">
-                <div class="comment-name">${comment.name}</div>
-                <div class="comment-text">${comment.text}</div>
-            </div>
+// 格式化北京时间
+function getNowTime() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const mon = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const h = String(d.getHours()).padStart(2, '0');
+    const m = String(d.getMinutes()).padStart(2, '0');
+    const s = String(d.getSeconds()).padStart(2, '0');
+    return `${year}-${mon}-${day} ${h}:${m}:${s}`;
+}
+// 读取历史
+function getHistory() {
+    const str = localStorage.getItem(HISTORY_KEY);
+    return str ? JSON.parse(str) : [];
+}
+// 保存历史
+function saveHistory(list) {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
+}
+// 渲染历史
+function renderHistory() {
+    const historyList = document.getElementById('historyList');
+    const list = getHistory();
+    if (list.length === 0) {
+        historyList.innerHTML = '<div class="history-empty">暂无训练记录</div>';
+        return;
+    }
+    let html = "";
+    list.reverse().forEach(item => {
+        html += `
+        <div class="history-item">
+            <div class="history-time">${item.time}</div>
+            <div class="history-content">作答：${item.content}</div>
+            <div class="history-score">理性：${item.score1}  共情：${item.score2}</div>
+        </div>
         `;
-        commentListEl.appendChild(commentItem);
     });
-
-    // 更新快捷回复
-    quickBubblesEl.innerHTML = '';
-    data.quickReplies.forEach(text => {
-        const bubble = document.createElement('div');
-        bubble.className = 'quick-bubble';
-        bubble.textContent = text;
-        bubble.addEventListener('click', () => {
-            replyInputEl.value = text;
-            charCountEl.textContent = `${text.length}/120`;
-        });
-        quickBubblesEl.appendChild(bubble);
-    });
-
-    // 清空输入框
-    replyInputEl.value = '';
-    charCountEl.textContent = '0/120';
+    historyList.innerHTML = html;
 }
 
-// 4. 输入框字数统计
-replyInputEl.addEventListener('input', function() {
-    const len = this.value.length;
-    charCountEl.textContent = `${len}/120`;
-});
+// 页面加载完成后执行
+window.addEventListener("DOMContentLoaded", function () {
+    // 初始化时间与历史
+    document.getElementById('updateTime').innerText = `题库更新于 ${getNowTime()}`;
+    renderHistory();
 
-// 5. 回车提交输入内容（阻止默认换行，触发反馈）
-replyInputEl.addEventListener('keydown', function(e) {
-    // 判断是否是回车键且没有按住shift（shift+回车可换行）
-    if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault(); // 阻止默认换行行为
-        
-        const inputText = this.value.trim();
-        if (!inputText) {
-            alert('请输入你的回应内容后再提交');
-            return;
+    // 全局DOM节点
+    const tabItems = document.querySelectorAll('.tab-item');
+    const categoryItems = document.querySelectorAll('.category-item');
+    const tagGroups = document.querySelectorAll('.tag-group');
+    const sceneTags = document.querySelectorAll('.scene-tag');
+    const levelTabs = document.querySelectorAll('.level-tab');
+    const topicTitleEl = document.querySelector('.topic-title');
+    const commentListEl = document.querySelector('.comment-list');
+    const quickBubblesEl = document.querySelector('.quick-bubbles');
+    const replyInputEl = document.querySelector('.reply-input');
+    const charCountEl = document.querySelector('.char-count');
+    const feedbackModal = document.getElementById('feedbackModal');
+    const feedbackCloseBtn = document.getElementById('feedbackModal');
+
+    // ========= 修复：使用事件委托（核心改动，解决快捷填充失效） =========
+    quickBubblesEl.addEventListener('click', function(e) {
+        // 只点击快捷气泡才执行
+        if (e.target.classList.contains('quick-bubble')) {
+            replyInputEl.value = e.target.textContent;
+            charCountEl.textContent = `${replyInputEl.value.length}/120`;
         }
+    });
 
-        // 生成动态反馈
-        generateFeedback(inputText);
-        
-        // 训练次数+1并保存
-        trainCount++;
-        localStorage.setItem("commentTrainCount", trainCount);
-        
-        // 清空输入框
-        this.value = '';
+    // 底部导航高亮
+    const currentFileName = location.pathname.split('/').pop().replace('.html','');
+    tabItems.forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.page === currentFileName);
+    });
+
+    // 更新话题（移除内部重复绑定点击事件）
+    function updateTopic() {
+        const activeCategory = document.querySelector('.category-item.active').dataset.type;
+        const activeLevelIndex = Array.from(levelTabs).findIndex(t => t.classList.contains('active'));
+        const levelKey = levelMap[activeLevelIndex];
+        const data = topicData[activeCategory][levelKey];
+
+        topicTitleEl.textContent = data.title;
+        commentListEl.innerHTML = '';
+        data.comments.forEach(comment => {
+            const item = document.createElement('div');
+            item.className = 'comment-item';
+            item.innerHTML = `
+                <div class="comment-avatar">${comment.name.charAt(0)}</div>
+                <div class="comment-content">
+                    <div class="comment-name">${comment.name}</div>
+                    <div class="comment-text">${comment.text}</div>
+                </div>`;
+            commentListEl.appendChild(item);
+        });
+
+        // 仅渲染标签，不再重复绑定点击事件
+        quickBubblesEl.innerHTML = '';
+        data.quickReplies.forEach(text => {
+            const bubble = document.createElement('div');
+            bubble.className = 'quick-bubble';
+            bubble.textContent = text;
+            quickBubblesEl.appendChild(bubble);
+        });
+
+        replyInputEl.value = '';
         charCountEl.textContent = '0/120';
     }
+
+    // 顶部分类切换
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            categoryItems.forEach(cat => cat.classList.remove('active'));
+            this.classList.add('active');
+            const type = this.dataset.type;
+            tagGroups.forEach(group => group.classList.remove('tag-group-show'));
+            document.querySelector(`.tag-group-${type}`)?.classList.add('tag-group-show');
+            updateTopic();
+        });
+    });
+
+    // 训练气泡点击
+    sceneTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            const parentGroup = this.closest('.tag-group');
+            let currType = "";
+            if(parentGroup.classList.contains('tag-group-hot')) currType = "hot";
+            else if(parentGroup.classList.contains('tag-group-dispute')) currType = "dispute";
+            else if(parentGroup.classList.contains('tag-group-debate')) currType = "debate";
+            else if(parentGroup.classList.contains('tag-group-refresh')) currType = "refresh";
+
+            categoryItems.forEach(c => c.classList.remove('active'));
+            document.querySelector(`.category-item[data-type="${currType}"]`)?.classList.add('active');
+            tagGroups.forEach(g => g.classList.remove('tag-group-show'));
+            parentGroup.classList.add('tag-group-show');
+            updateTopic();
+        });
+    });
+
+    // 难度切换
+    levelTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            levelTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            updateTopic();
+        });
+    });
+
+    // 字数统计
+    replyInputEl.addEventListener('input', () => {
+        charCountEl.textContent = `${replyInputEl.value.length}/120`;
+    });
+
+    // 回车提交
+    replyInputEl.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            const inputText = this.value.trim();
+            if (!inputText) {
+                alert("请输入回应内容");
+                return;
+            }
+            const activeCategory = document.querySelector('.category-item.active').dataset.type;
+            const activeLevelIndex = Array.from(levelTabs).findIndex(t => t.classList.contains('active'));
+            const levelKey = levelMap[activeLevelIndex];
+
+            const rScore = feedbackConfig.getRationalScore(inputText, levelKey);
+            const eScore = feedbackConfig.getEmpathyScore(inputText, levelKey);
+
+            trainCount++;
+            localStorage.setItem("commentTrainCount", trainCount);
+
+            const historyList = getHistory();
+            historyList.push({
+                time: getNowTime(),
+                content: inputText,
+                score1: rScore,
+                score2: eScore
+            });
+            saveHistory(historyList);
+            renderHistory();
+
+            const risk = feedbackConfig.getRiskLevel(rScore, eScore);
+            const tips = feedbackConfig.getOptimizationTips(rScore, eScore, levelKey);
+            const encourage = feedbackConfig.getEncouragement(trainCount, activeCategory, rScore, eScore);
+
+            document.querySelector('.score-row .score-item:nth-child(1) .score-value').textContent = rScore;
+            document.querySelector('.score-row .score-item:nth-child(2) .score-value').textContent = eScore;
+            const riskDom = document.querySelector('.score-row .score-item:nth-child(3) .score-value');
+            riskDom.textContent = risk.text;
+            riskDom.className = `score-value risk-${risk.level}`;
+            document.querySelector('.feedback-block .feedback-text').textContent = tips;
+            document.querySelector('.feedback-encourage .feedback-text').textContent = encourage;
+
+            // 首次提交弹音乐，非首次直接弹反馈
+            if (isFirstSubmit) {
+                openMusicModal();
+                isFirstSubmit = false;
+            } else {
+                feedbackModal.classList.add('active');
+            }
+
+            this.value = '';
+            charCountEl.textContent = '0/120';
+        }
+    });
+
+    // 关闭反馈弹窗
+    feedbackCloseBtn.addEventListener('click', () => feedbackModal.classList.remove('active'));
+    feedbackModal.addEventListener('click', (e) => {
+        if (e.target === feedbackModal) feedbackModal.classList.remove('active');
+    });
+
+    // 播放器按钮事件
+    playBtn.addEventListener('click', togglePlay);
+
+    // 页面初始化
+    updateTopic();
 });
 
-// 6. 生成动态反馈并显示弹窗
-function generateFeedback(inputText) {
-    // 获取当前选中的分类和难度
-    const activeCategory = document.querySelector('.category-item.active').dataset.type;
-    const activeLevelIndex = Array.from(levelTabs).findIndex(t => t.classList.contains('active'));
-    const levelKey = levelMap[activeLevelIndex];
+// ========= 全局登录拦截 极简版 =========
+// 登录状态：true=已登录  false=游客
+const IS_LOGIN = localStorage.getItem("isLogin") === "1";
+const loginTip = document.getElementById("loginTip");
+const tipClose = document.querySelector(".tip-close");
+const wrap = document.querySelector(".phone-box");
 
-    // 计算各项评分
-    const rationalScore = feedbackConfig.getRationalScore(inputText, levelKey);
-    const empathyScore = feedbackConfig.getEmpathyScore(inputText, levelKey);
-    const riskLevel = feedbackConfig.getRiskLevel(rationalScore, empathyScore);
-    const optimizationTips = feedbackConfig.getOptimizationTips(inputText, rationalScore, empathyScore, levelKey);
-    const encouragement = feedbackConfig.getEncouragement(trainCount, activeCategory, rationalScore, empathyScore);
-
-    // 更新弹窗内容
-    document.querySelector('.score-row .score-item:nth-child(1) .score-value').textContent = rationalScore;
-    document.querySelector('.score-row .score-item:nth-child(2) .score-value').textContent = empathyScore;
-    
-    // 更新风险等级（样式+文本）
-    const riskScoreEl = document.querySelector('.score-row .score-item:nth-child(3) .score-value');
-    riskScoreEl.textContent = riskLevel.text;
-    riskScoreEl.className = `score-value risk-${riskLevel.level}`;
-
-    // 更新优化建议和鼓励信息
-    document.querySelector('.feedback-block .feedback-text').textContent = optimizationTips;
-    document.querySelector('.feedback-encourage .feedback-text').textContent = encouragement;
-
-    // 显示弹窗
-    feedbackModal.classList.add('active');
-}
-
-// 7. 关闭反馈弹窗
-feedbackCloseBtn.addEventListener('click', function() {
-    feedbackModal.classList.remove('active');
+// 关闭弹窗
+tipClose.addEventListener("click", () => {
+    loginTip.classList.remove("show");
 });
 
-// 初始化题目
-updateTopic();
+// 全局点击拦截：游客状态下，所有点击弹出提示
+wrap.addEventListener("click", (e) => {
+    // 已登录 → 放行，原有逻辑正常执行
+    if (IS_LOGIN) return;
 
-// 初始化弹窗关闭事件（点击背景关闭）
-feedbackModal.addEventListener('click', function(e) {
-    if (e.target === this) {
-        this.classList.remove('active');
-    }
+    // 排除弹窗自身点击（防止反复弹出）
+    if (loginTip.contains(e.target)) return;
+
+    // 游客：弹出登录提示，阻止当前功能执行
+    e.preventDefault();
+    e.stopPropagation();
+    loginTip.classList.add("show");
 });

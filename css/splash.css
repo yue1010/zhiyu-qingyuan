@@ -18,7 +18,9 @@ body {
     border-radius: 48px;
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: url("../image/background.png") no-repeat center center;
+    background-size: cover;
+    background-position: center;
 }
 .island {
     width: 130px;
@@ -36,32 +38,40 @@ body {
     height:100%;
     display:flex;
     flex-direction:column;
-    justify-content: space-around;
     align-items:center;
+    padding: 140px 30px 100px;
 }
 .slogan-wrap{
     width: 100%;
-    padding: 0 40px;
+    margin-bottom: auto;
 }
 .slogan-text{
-    font-size: 32px;
+    font-size: 28px;
     color: #000;
-    line-height: 1.8;
+    line-height: 2.2;
+    letter-spacing: 2px; /* 增加文字字间距 */
 }
-.slogan-text.left {text-align: left;}
-.slogan-text.right {text-align: right;}
+.slogan-text.left {
+    text-align: left;
+    padding-left: 5px;
+}
+.slogan-text.right {
+    text-align: right;
+    padding-right: 5px;
+}
 .footer-logo{
     display: flex;
     align-items: center;
     gap:10px;
-    margin-bottom:50px;
+    margin-top: 145px;
 }
 .logo-img{
     width:90px;
     height:90px;
     object-fit: contain;
+    transform: translateY(6px); /* logo 图片单独下移 */
 }
 .name-text{
     font-size:36px;
-    color:#96cc49;
+    color:#bde978;
 }

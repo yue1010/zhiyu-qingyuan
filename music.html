@@ -9,7 +9,13 @@
 <body>
     <div class="phone-box">
         <div class="island"></div>
-
+        <!-- 登录提示弹窗 全局共用 -->
+<div class="login-tip" id="loginTip">
+    <div class="tip-box">
+        <p>请登录后解锁该功能</p>
+        <button class="tip-close">知道了</button>
+    </div>
+</div>
         <!-- 主内容区 -->
         <div class="container">
             <h1 class="page-title">音乐急救包</h1>
@@ -90,7 +96,7 @@
 
         <!-- 底部导航 -->
 <nav class="tab-bar">
-    <a href="music.html" class="tab-item active" data-page="music">
+    <a href="music.html" class="tab-item" data-page="music">
         <div class="icon-bg"></div>
         <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M9 18V5l12-2v13" />

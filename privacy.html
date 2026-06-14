@@ -6,30 +6,71 @@
     <title>隐私政策 & 用户协议</title>
     <link rel="stylesheet" href="css/mine.css">
     <style>
+        /* 主内容区统一布局 */
+        .container {
+            flex: 1;
+            padding: 60px 15px 20px;
+            background: #fff;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* 顶部导航栏 + 分割线 */
         .page-top {
             display: flex;
             align-items: center;
-            padding: 0 10px;
+            padding: 10px 0;
             margin-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
         }
+
+        /* 统一SVG返回箭头 */
         .back-btn {
-            font-size: 24px;
-            color: #24573f;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            padding: 5px 10px;
+            transition: transform 0.2s;
         }
+        .back-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #666;
+        }
+        .back-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* 统一标题样式 */
         .page-title-text {
             flex: 1;
             text-align: center;
             font-size: 22px;
             color: #24573f;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding-right: 25px;
         }
+
+        /* 卡片统一样式 */
         .text-card {
             padding: 20px;
-            background: #fff;
-            border-radius: 12px;
+            background: #f9fdf5;
+            border-radius: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
         }
+        .text-card:active {
+            background: #f0f7e8;
+            transform: scale(0.98);
+        }
+
         .text-card p {
             color: #333;
             line-height: 1.8;
@@ -44,7 +85,11 @@
 
         <div class="container">
             <div class="page-top">
-                <span class="back-btn" onclick="history.back()">‹</span>
+                <div class="back-btn" onclick="history.back()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 11H7.414l4.293-4.293a1 1 0 0 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a1 1 0 0 0 1.414-1.414L7.414 13H20a1 1 0 0 0 0-2z"/>
+                    </svg>
+                </div>
                 <h2 class="page-title-text">隐私政策 & 用户协议</h2>
                 <span></span>
             </div>
@@ -56,29 +101,6 @@
                 <p>4. 如有协议变更，将会在页面内进行公示。</p>
             </div>
         </div>
-
-        <nav class="tab-bar">
-            <a href="music.html" class="tab-item">
-                <div class="tab-icon">🎵</div>
-                <div class="tab-text">急救包</div>
-            </a>
-            <a href="comment.html" class="tab-item">
-                <div class="tab-icon">💬</div>
-                <div class="tab-text">模拟器</div>
-            </a>
-            <a href="diary.html" class="tab-item">
-                <div class="tab-icon">📖</div>
-                <div class="tab-text">情绪日记</div>
-            </a>
-            <a href="transform.html" class="tab-item">
-                <div class="tab-icon">✨</div>
-                <div class="tab-text">转化坊</div>
-            </a>
-            <a href="mine.html" class="tab-item active">
-                <div class="tab-icon">👤</div>
-                <div class="tab-text">我的</div>
-            </a>
-        </nav>
     </div>
 </body>
 </html>

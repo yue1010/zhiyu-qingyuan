@@ -11,38 +11,44 @@
     flex-direction: column;
 }
 
-/* 固定在顶部的标题区域 */
 .header-fixed {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
     padding: 0 20px;
-    z-index: 10;
-    background: #fff;
+    margin-bottom: 0px;
 }
-/* 统一标题样式 - 绿色30px, 左对齐 */
 .page-title {
     font-size: 30px;
-    color: #bde978; /* 您要的绿色 */
+    color: #bde978; /* 适配日记页面的绿色系主色 */
     margin-bottom: 10px;
-    text-align: left; /* 左对齐 */
+    text-align: left;
     font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 2px;
 }
-
-/* 统一副标题样式 - 居中 */
 .sub-title {
     font-size: 15px;
-    color: #666;
+    color: #000000;
     margin-bottom: 20px;
-    text-align: center; /* 居中 */
+    text-align: center;
     line-height: 1.4;
+    /* 增加轻微的文字间距提升可读性 */
+    letter-spacing: 1px;
+}
+
+/* 修复头部固定布局（如果需要置顶） */
+.header-fixed {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+    padding-top: 60px; /* 匹配music页面的顶部内边距 */
+    padding-bottom: 0px;
+    border-bottom: 1px solid #f5f9f5;
 }
 
 /* 可滚动内容区 */
 .container {
     flex: 1;
-    padding: 120px 20px 20px;
+    padding: 0px 20px 20px;
     background: #fff;
     overflow-y: auto;
     scrollbar-width: none;

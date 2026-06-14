@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>评论模拟器</title>
-    <link rel="stylesheet" href="css/music.css">
     <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/music.css">
 </head>
 <body>
+    <!-- 登录提示弹窗 全局共用 -->
+<div class="login-tip" id="loginTip">
+    <div class="tip-box">
+        <p>请登录后解锁该功能</p>
+        <button class="tip-close">知道了</button>
+    </div>
+</div>
     <div class="phone-box">
         <div class="island"></div>
 
@@ -36,13 +43,14 @@
                     </div>
                 </div>
 
-                <!-- 训练场景模块：两行交错 + 横向滑动 -->
+                <!-- 训练场景模块 -->
                 <div class="scene-section">
                     <div class="scene-title">训练场景</div>
-                    <div class="scene-subtitle">来源网络、日常社交场景</div>
+                    <!-- 已修改：题库更新于 + 时间 -->
+                    <div class="scene-subtitle" id="updateTime">题库更新于</div>
                     
                     <div class="scene-scroll">
-                        <!-- 全网热点 标签组 -->
+                        <!-- 全网热点 2行×3标签 -->
                         <div class="tag-group tag-group-hot tag-group-show">
                             <div class="tag-row">
                                 <div class="scene-tag">
@@ -67,10 +75,14 @@
                                     <span class="tag-icon"></span>
                                     <span>热点点评</span>
                                 </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>社会观察</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- 争议话题 标签组 -->
+                        <!-- 争议话题 2行×3标签 -->
                         <div class="tag-group tag-group-dispute">
                             <div class="tag-row">
                                 <div class="scene-tag">
@@ -95,10 +107,14 @@
                                     <span class="tag-icon"></span>
                                     <span>观点对峙</span>
                                 </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>人际沟通</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- 观点交锋 标签组 -->
+                        <!-- 观点交锋 2行×3标签 -->
                         <div class="tag-group tag-group-debate">
                             <div class="tag-row">
                                 <div class="scene-tag">
@@ -123,10 +139,14 @@
                                     <span class="tag-icon"></span>
                                     <span>深度讨论</span>
                                 </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>辩证思考</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- 更换题库 标签组 -->
+                        <!-- 更换题库 2行×3标签 -->
                         <div class="tag-group tag-group-refresh">
                             <div class="tag-row">
                                 <div class="scene-tag">
@@ -151,14 +171,18 @@
                                     <span class="tag-icon"></span>
                                     <span>随心发言</span>
                                 </div>
+                                <div class="scene-tag">
+                                    <span class="tag-icon"></span>
+                                    <span>日常感悟</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 今日话题卡片：参考图1风格 + 评论模拟 -->
+                <!-- 今日话题卡片 -->
                 <div class="topic-card">
-                    <!-- 难度切换栏：舒缓/进阶/高压 -->
+                    <!-- 难度切换栏 -->
                     <div class="topic-level-tabs">
                         <div class="level-tab active">🌿 舒缓</div>
                         <div class="level-tab">⚡ 进阶</div>
@@ -202,50 +226,81 @@
                             <div class="quick-bubble">舒缓难度建议先做到语气平和，再追求观点完整。</div>
                         </div>
                     </div>
+
+                    <!-- 新增：训练历史记录 -->
+                    <div class="history-reply">
+                        <div class="history-title">训练历史记录</div>
+                        <div class="history-list" id="historyList">
+                            <div class="history-empty">暂无训练记录</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- 训练反馈弹窗（参考音乐弹窗的结构，居中弹出） -->
-<div class="feedback-modal" id="feedbackModal">
-    <div class="feedback-modal-content">
-        <!-- 标题 -->
-        <h2 class="feedback-title">本次训练反馈</h2>
-
-        <!-- 三项评分卡片 -->
-        <div class="score-row">
-            <div class="score-item">
-                <div class="score-label">理性表达</div>
-                <div class="score-value">54</div>
-            </div>
-            <div class="score-item">
-                <div class="score-label">共情程度</div>
-                <div class="score-value">48</div>
-            </div>
-            <div class="score-item">
-                <div class="score-label">风险等级</div>
-                <div class="score-value risk-low">低</div>
+        <!-- 音乐弹窗（修改后） -->
+<div class="music-modal" id="musicModal">
+    <div class="modal-content">
+        <div class="album-cover">
+           
+        </div>
+        <div class="song-info">
+            <h2 class="song-title">情绪可以缓一点~</h2>
+            <p class="song-artist">温馨陪伴 · 放松心情</p>
+            <!-- 删掉爱心，只保留标签 -->
+            <div class="tag-like-row">
+                <span class="song-tag">训练放松</span>
             </div>
         </div>
 
-        <!-- 优化建议 -->
-        <div class="feedback-block">
-            <p class="feedback-text">论点还不够清晰。建议补充一个事实依据，并减少情绪化语气词。优化建议：将“你”改为“我们”，降低对立感。</p>
+        <!-- 播放控制：播放按钮 + 收藏按钮（保留） -->
+        <div class="player-controls">
+            <button class="play-btn" id="playBtn">▶</button>
+            <button class="like-btn" id="likeBtn">🤍</button>
         </div>
 
-        <!-- 鼓励信息 -->
-        <div class="feedback-block feedback-encourage">
-            <p class="feedback-text">第 2 次训练完成，表现在持续进步。你在热点讨论场景下已经具备稳定表达能力，下一步可尝试“事实 + 感受 + 方案”三段式表达。</p>
+        <div class="progress-container">
+            <span class="time current-time">00:00</span>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <span class="time total-time">03:20</span>
         </div>
-
-        <!-- 关闭按钮 -->
-        <button class="feedback-close-btn" id="feedbackCloseBtn">我知道了</button>
+        <button class="close-btn" id="closeBtn">关闭卡片</button>
     </div>
 </div>
 
+        <!-- 训练反馈弹窗（原有，未改动） -->
+        <div class="feedback-modal" id="feedbackModal">
+            <div class="feedback-modal-content">
+                <h2 class="feedback-title">本次训练反馈</h2>
+                <div class="score-row">
+                    <div class="score-item">
+                        <div class="score-label">理性表达</div>
+                        <div class="score-value">54</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-label">共情程度</div>
+                        <div class="score-value">48</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-label">风险等级</div>
+                        <div class="score-value risk-low">低</div>
+                    </div>
+                </div>
+                <div class="feedback-block">
+                    <p class="feedback-text">论点还不够清晰。建议补充一个事实依据，并减少情绪化语气词。优化建议：将“你”改为“我们”，降低对立感。</p>
+                </div>
+                <div class="feedback-block feedback-encourage">
+                    <p class="feedback-text">第 2 次训练完成，表现在持续进步。你在热点讨论场景下已经具备稳定表达能力，下一步可尝试“事实 + 感受 + 三段式表达。</p>
+                </div>
+                <button class="feedback-close-btn" id="feedbackCloseBtn">我知道了</button>
+            </div>
+        </div>
+
         <!-- 底部导航 -->
 <nav class="tab-bar">
-    <a href="music.html" class="tab-item active" data-page="music">
+    <a href="music.html" class="tab-item" data-page="music">
         <div class="icon-bg"></div>
         <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M9 18V5l12-2v13" />
@@ -263,7 +318,7 @@
         <div class="icon-bg"></div>
         <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 0 0 1 6.5 2z" />
         </svg>
     </a>
     <a href="transform.html" class="tab-item" data-page="transform">
@@ -280,6 +335,7 @@
         </svg>
     </a>
 </nav>
+    </div>
 
     <script src="js/comment.js"></script>
 </body>

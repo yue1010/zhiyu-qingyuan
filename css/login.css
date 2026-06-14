@@ -43,8 +43,8 @@ body {
 }
 /* 渐变边框外层 */
 .img-box{
-    width:270px;
-    height:220px;
+    width:220px;
+    height:180px;
     border-radius:24px;
     padding:1px;
     background: linear-gradient(135deg,#c6f0b9,#8ed870);
@@ -75,6 +75,7 @@ body {
     height:50px;
     border-radius:99px;
     border:none;
+    color:#666;
     font-size:24px;
     font-weight:bold;
     background:linear-gradient(90deg,#bcf090,#f1fbb8);

@@ -6,48 +6,86 @@
     <title>我的收藏</title>
     <link rel="stylesheet" href="css/mine.css">
     <style>
+        /* 主内容区 整体左移 */
+        .container {
+            flex: 1;
+            padding: 60px 15px 20px;
+            background: #fff;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+
         /* 顶部导航栏 */
         .page-top {
             display: flex;
             align-items: center;
-            padding: 0 10px;
+            padding: 10px 0;
             margin-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
         }
+        /* SVG 返回箭头 */
         .back-btn {
-            font-size: 24px;
-            color: #24573f;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            padding: 5px 10px;
+            transition: transform 0.2s;
+        }
+        .back-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #666;
+        }
+        .back-btn:active {
+            transform: scale(0.9);
         }
         .page-title-text {
-            flex: 1;
-            text-align: center;
-            font-size: 22px;
-            color: #24573f;
+        flex: 1;
+        text-align: center;
+        font-size: 22px;
+        color: #24573f;
+        font-weight: bold;
+        letter-spacing: 2px;
+        padding-right: 25px; /* 向左偏移，数值可按需微调 */
         }
 
-        /* 歌单条目样式 */
+        /* 歌单条目 */
         .song-item {
             display: flex;
             align-items: center;
             padding: 16px;
-            background: #fff;
-            border-radius: 12px;
+            background: #f9fdf5;
+            border-radius: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.2s ease;
         }
         .song-item:active {
-            background: #f9fdf5;
+            background: #f0f7e8;
+            transform: scale(0.98);
         }
-        /* 歌曲图标 */
+
+        /* 音符图片容器 */
         .song-icon {
-            font-size: 26px;
-            color: #673ab7; /* 紫色图标，和你设计稿一致 */
+            width: 32px;
+            height: 32px;
             margin-right: 14px;
+            flex-shrink: 0;
         }
-        /* 歌曲信息区域 */
+        .song-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* 歌曲信息 */
         .song-info {
             flex: 1;
         }
@@ -55,19 +93,29 @@
             font-size: 17px;
             color: #333;
             margin-bottom: 4px;
+            font-weight: 500;
         }
         .song-desc {
             font-size: 13px;
             color: #999;
         }
-        /* 播放/暂停标识 */
+
+        /* 播放按钮 蓝系配色，无绿色 */
         .song-control {
-            font-size: 18px;
-            color: #999;
-            transition: color 0.2s;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888;
+            transition: all 0.2s ease;
         }
         .song-control.playing {
-            color: #bde978; /* 播放时变为主绿色 */
+            background: #e0eafc;
+            color: #4068b3;
         }
     </style>
 </head>
@@ -77,94 +125,93 @@
 
         <div class="container">
             <div class="page-top">
-                <span class="back-btn" onclick="history.back()">‹</span>
+                <div class="back-btn" onclick="history.back()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 11H7.414l4.293-4.293a1 1 0 0 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a1 1 0 0 0 1.414-1.414L7.414 13H20a1 1 0 0 0 0-2z"/>
+                    </svg>
+                </div>
                 <h2 class="page-title-text">我的收藏</h2>
                 <span></span>
             </div>
 
-            <!-- 收藏歌单列表 -->
+            <!-- 歌曲列表：取自 songLists 数据 -->
             <div class="song-item">
-                <div class="song-icon">🎵</div>
+                <div class="song-icon">
+                    <img src="image/1.jpg" alt="音符">
+                </div>
                 <div class="song-info">
-                    <div class="song-name">晚风</div>
-                    <div class="song-desc">舒缓轻音乐 | 放松心情</div>
+                    <div class="song-name">Release Anger</div>
+                    <div class="song-desc">By: Meditation Hub | 释放愤怒</div>
                 </div>
                 <div class="song-control">▶</div>
             </div>
 
             <div class="song-item">
-                <div class="song-icon">🎵</div>
+                <div class="song-icon">
+                    <img src="image/2.jpg" alt="音符">
+                </div>
                 <div class="song-info">
-                    <div class="song-name">春日序曲</div>
-                    <div class="song-desc">纯音乐 | 治愈情绪</div>
+                    <div class="song-name">Anxiety Relief</div>
+                    <div class="song-desc">By: Calm Music | 缓解焦虑</div>
                 </div>
                 <div class="song-control">▶</div>
             </div>
 
             <div class="song-item">
-                <div class="song-icon">🎵</div>
+                <div class="song-icon">
+                    <img src="image/3.jpg" alt="音符">
+                </div>
                 <div class="song-info">
-                    <div class="song-name">安静时光</div>
-                    <div class="song-desc">助眠曲目 | 缓解焦虑</div>
+                    <div class="song-name">Sad Healing</div>
+                    <div class="song-desc">By: Soft Piano | 委屈治愈</div>
                 </div>
                 <div class="song-control">▶</div>
             </div>
 
             <div class="song-item">
-                <div class="song-icon">🎵</div>
+                <div class="song-icon">
+                    <img src="image/4.jpg" alt="音符">
+                </div>
                 <div class="song-info">
-                    <div class="song-name">晴空</div>
-                    <div class="song-desc">轻快旋律 | 赶走疲惫</div>
+                    <div class="song-name">Inner Peace</div>
+                    <div class="song-desc">By: Nature Sounds | 内心平静</div>
+                </div>
+                <div class="song-control">▶</div>
+            </div>
+
+            <div class="song-item">
+                <div class="song-icon">
+                    <img src="image/5.jpg" alt="音符">
+                </div>
+                <div class="song-info">
+                    <div class="song-name">Soul Heal</div>
+                    <div class="song-desc">By: Healing Tones | 灵魂治愈</div>
                 </div>
                 <div class="song-control">▶</div>
             </div>
         </div>
 
-        <!-- 底部导航 -->
-        <nav class="tab-bar">
-            <a href="music.html" class="tab-item">
-                <div class="tab-icon">🎵</div>
-                <div class="tab-text">急救包</div>
-            </a>
-            <a href="comment.html" class="tab-item">
-                <div class="tab-icon">💬</div>
-                <div class="tab-text">模拟器</div>
-            </a>
-            <a href="diary.html" class="tab-item">
-                <div class="tab-icon">📖</div>
-                <div class="tab-text">情绪日记</div>
-            </a>
-            <a href="transform.html" class="tab-item">
-                <div class="tab-icon">✨</div>
-                <div class="tab-text">转化坊</div>
-            </a>
-            <a href="mine.html" class="tab-item active">
-                <div class="tab-icon">👤</div>
-                <div class="tab-text">我的</div>
-            </a>
-        </nav>
-    </div>
-
     <script>
-        // 获取所有歌曲条目
         const songControls = document.querySelectorAll('.song-control');
 
-        songControls.forEach(control => {
-            control.addEventListener('click', (e) => {
-                // 阻止事件冒泡，防止点击整个条目也触发
-                e.stopPropagation();
-
-                if (control.classList.contains('playing')) {
-                    // 暂停状态：变回播放图标 ▶
-                    control.textContent = '▶';
-                    control.classList.remove('playing');
-                } else {
-                    // 播放状态：变成暂停图标 ||，并设为绿色
-                    control.textContent = '| |';
-                    control.classList.add('playing');
-                }
-            });
+songControls.forEach(control => {
+    control.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // 当前正在播放 → 直接暂停
+        if (control.classList.contains('playing')) {
+            control.textContent = '▶';
+            control.classList.remove('playing');
+            return;
+        }
+        // 不在播放 → 先重置所有，再开启当前
+        songControls.forEach(item => {
+            item.textContent = '▶';
+            item.classList.remove('playing');
         });
+        control.textContent = '| |';
+        control.classList.add('playing');
+    });
+});
     </script>
 </body>
 </html>

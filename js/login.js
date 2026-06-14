@@ -47,7 +47,7 @@ privacyCheck.onchange = function(){
     }
 }
 
-//点击确认关闭隐私弹窗，解锁全页面功能
+//点击确认关闭隐私弹窗
 agreeBtn.onclick = function(){
     isAgree = true;
     privacyMask.style.display = 'none';
@@ -59,7 +59,7 @@ openPop.onclick = function(){
         alert("请先阅读并同意隐私政策");
         return;
     }
-    mask.style.display = 'block'; //修复引号错误
+    mask.style.display = 'block';
     popBox.classList.add('pop-show');
 }
 
@@ -73,13 +73,15 @@ mask.onclick = function(){
     popBox.classList.remove('pop-show');
 }
 
-//游客按钮
+// ========= 1. 游客模式：不写入登录标识 =========
 tourBtn.onclick = function(){
     if(!isAgree){
         alert("请先阅读并同意隐私政策");
         return;
     }
     alert("游客模式进入APP，仅开放部分功能，登录解锁全部服务");
+    // 游客：清空登录标记，模拟未登录状态
+    localStorage.removeItem("isLogin");
     location.href = "music.html";
 }
 
@@ -107,7 +109,7 @@ getCodeBtn.onclick = function(){
     },1000)
 }
 
-//手机号登录（移除协议勾选判断）
+// ========= 2. 手机号登录：正式登录，写入标识 =========
 submitLogin.onclick = function(){
     if(!isAgree){
         alert("请先阅读并同意隐私政策");
@@ -126,25 +128,29 @@ submitLogin.onclick = function(){
     alert('登录成功，跳转APP首页');
     mask.style.display = 'none';
     popBox.classList.remove('pop-show');
+    // 正式登录：写入登录标记
+    localStorage.setItem("isLogin", "1");
     location.href = "music.html";
 }
 
-//QQ登录（移除协议勾选判断）
+// ========= 3. QQ登录：正式登录，写入标识 =========
 qqLogin.onclick = function(){
     if(!isAgree){
         alert("请先阅读并同意隐私政策");
         return;
     }
     alert('模拟QQ授权登录，授权成功跳转APP首页');
+    localStorage.setItem("isLogin", "1");
     location.href = "music.html";
 }
 
-//微信登录（移除协议勾选判断）
+// ========= 4. 微信登录：正式登录，写入标识 =========
 wxLogin.onclick = function(){
     if(!isAgree){
         alert("请先阅读并同意隐私政策");
         return;
     }
     alert('模拟微信授权登录，授权成功跳转APP首页');
+    localStorage.setItem("isLogin", "1");
     location.href = "music.html";
 }

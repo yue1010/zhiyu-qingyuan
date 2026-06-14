@@ -18,11 +18,32 @@
             cursor: pointer;
             padding: 5px 10px;
         }
+        /* SVG 返回箭头 */
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .back-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #666;
+        }
+        .back-btn:active {
+            transform: scale(0.9);
+        }
         .page-title-text {
-            flex: 1;
-            text-align: center;
-            font-size: 22px;
-            color: #24573f;
+        flex: 1;
+        text-align: center;
+        font-size: 22px;
+        color: #24573f;
+        font-weight: bold;
+        letter-spacing: 2px;
+        padding-right: 25px; /* 向左偏移，数值可按需微调 */
         }
         .feedback-card {
             padding: 20px;
@@ -82,8 +103,13 @@
         <div class="island"></div>
 
         <div class="container">
-            <div class="page-top">
-                <span class="back-btn" onclick="history.back()">‹</span>
+             <div class="page-top">
+                <div class="back-btn" onclick="history.back()">
+                    <!-- 统一全局标准 SVG 返回箭头 -->
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M20 11H7.414l4.293-4.293a1 1 0 0 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a1 1 0 0 0 1.414-1.414L7.414 13H20a1 1 0 0 0 0-2z"/>
+                    </svg>
+                </div>
                 <h2 class="page-title-text">意见反馈</h2>
                 <span></span>
             </div>
@@ -93,30 +119,6 @@
                 <button class="submit-btn" id="submitBtn">提交反馈</button>
             </div>
         </div>
-
-        <nav class="tab-bar">
-            <a href="music.html" class="tab-item">
-                <div class="tab-icon">🎵</div>
-                <div class="tab-text">急救包</div>
-            </a>
-            <a href="comment.html" class="tab-item">
-                <div class="tab-icon">💬</div>
-                <div class="tab-text">模拟器</div>
-            </a>
-            <a href="diary.html" class="tab-item">
-                <div class="tab-icon">📖</div>
-                <div class="tab-text">情绪日记</div>
-            </a>
-            <a href="transform.html" class="tab-item">
-                <div class="tab-icon">✨</div>
-                <div class="tab-text">转化坊</div>
-            </a>
-            <a href="mine.html" class="tab-item active">
-                <div class="tab-icon">👤</div>
-                <div class="tab-text">我的</div>
-            </a>
-        </nav>
-    </div>
 
     <!-- 提示弹窗 -->
     <div class="toast" id="toast"></div>

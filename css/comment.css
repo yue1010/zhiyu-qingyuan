@@ -37,24 +37,54 @@
     cursor: pointer;
     transition: all 0.2s;
 }
+/* 全局激活文字色基础 */
 .category-item.active {
-    color: #96cc49;
     font-weight: bold;
 }
 .category-icon {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: #bde978;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
+    transition: background 0.2s;
+}
+
+/* ========== 按分类单独配色 ========== */
+/* 全网 #F9D8FC */
+.category-item[data-type="hot"] .category-icon {
+    background: #F9D8FC;
+}
+.category-item[data-type="hot"].active {
+    color: #F9D8FC;
+}
+/* 争议 #F6F5EF */
+.category-item[data-type="dispute"] .category-icon {
+    background: #F6F5EF;
+}
+.category-item[data-type="dispute"].active {
+    color: #F6F5EF;
+}
+/* 观点 #BDE978 */
+.category-item[data-type="debate"] .category-icon {
+    background: #BDE978;
+}
+.category-item[data-type="debate"].active {
+    color: #BDE978;
+}
+/* 更换题库 #93CDE9 */
+.category-item[data-type="refresh"] .category-icon {
+    background: #93CDE9;
+}
+.category-item[data-type="refresh"].active {
+    color: #93CDE9;
 }
 
 /* 训练场景模块 */
 .scene-section {
-    margin-bottom: 0px; /* 再减少间距，让话题卡片上移到和弹幕等距 */
+    margin-bottom: 0px;
 }
 .scene-title {
     font-size: 19px;
@@ -83,7 +113,7 @@
     scrollbar-width: none;
 }
 
-/* 标签组：默认隐藏，仅显示 active 组 */
+/* 标签组：默认隐藏 */
 .tag-group {
     display: none;
     width: max-content;
@@ -95,7 +125,7 @@
     gap: 10px;
 }
 
-/* 两行标签，交错排列 */
+/* 保留第二行标签缩进 */
 .tag-row {
     display: flex;
     gap: 12px;
@@ -104,7 +134,7 @@
     margin-left: 30px;
 }
 
-/* 标签样式 */
+/* 标签核心样式 + 修复点击遮挡 */
 .scene-tag {
     background: #f3fbeb;
     border-radius: 99px;
@@ -115,7 +145,20 @@
     font-size: 14px;
     color: #24573f;
     white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s;
+    /* 父标签正常响应点击 */
+    pointer-events: auto;
 }
+/* 关键修复：内部图标、文字穿透点击，不遮挡父标签 */
+.scene-tag .tag-icon,
+.scene-tag span {
+    pointer-events: none;
+}
+.scene-tag:hover {
+    background: #e4f4d8;
+}
+
 .tag-icon {
     width: 16px;
     height: 16px;
@@ -133,18 +176,15 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* 难度切换栏：解决文字被截断问题 */
+/* 难度切换栏 - 修复居中+样式对齐 */
 .topic-level-tabs {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; /* 改为居中对齐 */
     gap: 10px;
     margin-bottom: 18px;
-    /* 强制容器宽度足够，避免被父级截断 */
     width: 100%;
-    overflow-x: visible;
 }
 .level-tab {
-    /* 增大左右内边距，保证“高压”文字完全显示 */
     padding: 10px 18px;
     border-radius: 20px;
     font-size: 12px;
@@ -156,7 +196,8 @@
     align-items: center;
     justify-content: center;
     white-space: nowrap;
-    flex-shrink: 0; /* 防止被压缩 */
+    flex-shrink: 0;
+    border: none;
 }
 .level-tab.active {
     background: #bde978;
@@ -166,7 +207,7 @@
 
 /* 话题标题 */
 .topic-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #222;
     margin-bottom: 16px;
@@ -211,7 +252,6 @@
 }
 .comment-text {
     font-size: 14px;
-    color: #444;
     line-height: 1.5;
 }
 
@@ -244,6 +284,9 @@
 }
 
 /* 快捷表达建议 */
+.quick-reply {
+    margin-bottom: 16px;
+}
 .quick-reply .quick-title {
     font-size: 14px;
     color: #666;
@@ -267,18 +310,69 @@
     background: #d9f2d9;
 }
 
-/* ========== 训练反馈弹窗（参考音乐弹窗的动画和居中效果） ========== */
+/* 新增：训练历史记录样式 */
+.history-reply {
+    margin-top: 10px;
+}
+.history-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.history-list {
+    max-height: 180px;
+    overflow-y: auto;
+    background: #f8fbf8;
+    border-radius: 12px;
+    padding: 10px;
+}
+.history-list::-webkit-scrollbar {
+    width: 4px;
+}
+.history-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 2px;
+}
+.history-empty {
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    padding: 20px 0;
+}
+.history-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.history-time {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+.history-content {
+    color: #333;
+    margin-bottom: 4px;
+}
+.history-score {
+    color: #24573f;
+    font-weight: bold;
+}
+
+/* ========== 训练反馈弹窗 ========== */
 .feedback-modal {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 深色半透明背景，突出弹窗 */
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 300; /* 层级高于音乐弹窗 */
+    z-index: 300;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -297,7 +391,7 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0.2);
     transform: translateY(80px);
     transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -378,4 +472,179 @@
     font-weight: bold;
     cursor: pointer;
     margin-top: 5px;
+}
+
+/* 底部导航栏 */
+.tab-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    border-top: 1px solid #eee;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+/* 导航单项通用 */
+.tab-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    color: #999;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    /* 初始无凸起 */
+    transform: translateY(0);
+}
+
+/* 激活圆形背景 + 发光（默认隐藏） */
+.tab-item .icon-bg {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fff5cc 0%, #e8f5e9 100%);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    z-index: 0;
+    box-shadow: 0 0 15px rgba(255, 213, 128, 0.5);
+}
+
+/* 图标基础样式，固定尺寸防扭曲 */
+.tab-item .tab-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    /* 锁定尺寸、比例，彻底解决变形 */
+    flex-shrink: 0;
+}
+
+/* ========== 激活状态：所有图标统一效果 ========== */
+/* 激活项：文字/图标主色改变 + 整体向上凸起 */
+.tab-item.active {
+    color: #000000;
+    transform: translateY(-8px);
+}
+
+/* 激活图标缩放 */
+.tab-item.active .tab-icon {
+    transform: scale(1.1);
+}
+
+/* 激活显示圆形发光背景 */
+.tab-item.active .icon-bg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.album-cover {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0.1);
+}
+
+.album-cover {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background: url('../image/13.jpg') center center / 110% 110% no-repeat;
+    animation: rotateAlbum 20s linear infinite paused;
+}
+
+.album-cover.playing {
+    animation-play-state: running;
+}
+
+@keyframes rotateAlbum {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 播放控制：播放 + 爱心 并排居中 */
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* 复用原有按钮样式，微调 */
+.play-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 单独设置控制栏里的爱心按钮大小 */
+.player-controls .like-btn {
+    font-size: 32px;
+    color: #ccc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.player-controls .like-btn.active {
+    color: #ff6b6b;
+}
+
+/* 登录提示弹窗 全局拦截用 */
+.login-tip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.login-tip.show {
+    display: flex;
+}
+.tip-box {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+.tip-box p {
+    margin: 0 0 15px;
+    font-size: 15px;
+    color: #333;
+}
+.tip-close {
+    padding: 6px 18px;
+    border: none;
+    background: #bde978;
+    color: #24573f;
+    border-radius: 6px;
+    cursor: pointer;
 }
