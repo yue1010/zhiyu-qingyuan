@@ -74,7 +74,7 @@ for (let day = 1; day <= daysInMonth; day++) {
     html += `
         <div class="day-cell ${isToday ? 'today' : ''}" data-date="${dateStr}">
             <span class="day-number">${day}</span>
-            ${imgUrl ? `<img class="day-emoji-img" src="${imgUrl}" alt="情绪图标">` : ""}
+            ${imgUrl ? `<img class="day-emoji-img" src="${imgUrl}" alt="情绪图标" crossorigin="anonymous">` : ""}
         </div>
     `;
 }
